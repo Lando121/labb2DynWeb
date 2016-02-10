@@ -74,9 +74,12 @@ var DinnerModel = function() {
 	var dish = getDishById(id);
 	for( j= 0; j < selectedDishes.length; j++){
 		if(dish.type==selectedDishes[j].type){
+			delete selectedDishes[j];
 			selectedDishes[j] = dish;
-		  }
-	   }
+			return;
+		}
+		}
+		selectedDishes.push(dish);
 	}
 
 	//Removes dish from menu
