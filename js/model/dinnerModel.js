@@ -62,6 +62,11 @@ var DinnerModel = function() {
 
 	//Removes dish from menu
 	this.removeDishFromMenu = function(id) {
+		for(i = 0; i < dishes.length; i++){
+			if(dishes[i].id == id){
+				dishes.splice(i, 1);
+			}
+		}
 		//TODO Lab 2
 	}
 
