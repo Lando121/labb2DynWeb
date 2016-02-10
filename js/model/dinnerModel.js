@@ -4,7 +4,7 @@ var DinnerModel = function() {
 	//TODO Lab 2 implement the data structure that will hold number of guest
 	// and selected dinner options for dinner menu
 	var numGuests = 2;
-	var selectedDishes;
+	var selectedDishes = new Array();
 
 
 	this.setNumberOfGuests = function(num) {
@@ -21,21 +21,27 @@ var DinnerModel = function() {
 	//Returns the dish that is on the menu for selected type 
 	this.getSelectedDish = function(type) {
 		//TODO Lab 2
-		return selectedDishes;
+		for(i = 0; i < selectedDishes.length; i++){
+			if(selectedDishes[i].type.equals(type)){
+				return selectedDishes[i];
+			} else {
+				console.log("no dish choosed for that type");
+			}
+		}
 	}
 
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
 		//TODO Lab 2
-		return dishes;
+		return selectedDishes;
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
 	this.getAllIngredients = function() {
 		//TODO Lab 2 PSEUDO!!
 		var ingredientsList = new Array();
-		for(i = 0; i < dishes.length; i++){
-			ingredientsList.push(dishes[i].ingredients);
+		for(i = 0; i < selectedDishes.length; i++){
+			ingredientsList.push(selectedDishes[i].ingredients);
 		}
 		return ingredientsList;
 	}
@@ -44,9 +50,9 @@ var DinnerModel = function() {
 	this.getTotalMenuPrice = function() {
 		//TODO Lab 2
 		var totalCost = 0;
-		for(i = 0; i < dishes.length; i++){
-			for(j = 0; j < dishes[i].ingredients.length; j++){
-				totalCost = totalCost + (this.getNumberOfGuests() * dishes[i].ingredients[j].price);
+		for(i = 0; i < selectedDishes.length; i++){
+			for(j = 0; j < selectedDishes[i].ingredients.length; j++){
+				totalCost = totalCost + (this.getNumberOfGuests() * selectedDishes[i].ingredients[j].price);
 			}
 			
 		}
@@ -75,9 +81,9 @@ var DinnerModel = function() {
 
 	//Removes dish from menu
 	this.removeDishFromMenu = function(id) {
-		for(i = 0; i < dishes.length; i++){
-			if(dishes[i].id == id){
-				dishes.splice(i, 1);
+		for(i = 0; i < selectedDishes.length; i++){
+			if(selectedDishes[i].id == id){
+				selectedDishes.splice(i, 1);
 			}
 		}
 		//TODO Lab 2
