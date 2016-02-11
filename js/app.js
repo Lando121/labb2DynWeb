@@ -12,11 +12,12 @@ showScreens();
 });
 
 // skapar en funktion som displayar screen
-function showScreens(){
-	// Gör en AJAX-request som hämtar screen1.html
+function showScreens(id){
+	// Gör en AJAX-request som hämtar t.ex. screen1.html
 	$.ajax({url:"screen1.html", success: function(result){
-        $("#View1").html(result);
+        
     }});
+
 }
 
 
