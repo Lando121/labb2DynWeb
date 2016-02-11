@@ -1,0 +1,47 @@
+#mainContainer{
+
+	margin-left: 0;
+}
+
+#peopleInput{
+	width:20%;
+	text-align: left;
+	margin-left: 10%;
+}
+.subHeading{
+	font-size:20px;
+}
+
+#View2 p{
+	font-size: 16px;
+	
+}
+
+#confirmButton{
+	margin-left:15%;
+	width: 70%;
+}
+
+.left_align_par{
+	text-align: left;
+	
+	
+}
+
+
+.right_align_par{
+	text-align: right;
+
+	
+}
+
+.middle_align_par{
+	text-align:center;
+	
+}
+
+#grey_row_view2{
+	border-top:2px solid black;
+	border-bottom:2px solid black;
+	background-color: grey;
+}
