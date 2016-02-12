@@ -10,6 +10,11 @@ $(function() {
 
 	showScreens(1);
 
+	$.ajaxSetup ({
+	    // Disable caching of AJAX responses
+	    cache: false
+	});
+
 });
 
 // skapar en funktion som displayar screen
@@ -17,8 +22,17 @@ $(function() {
 function showScreens(id){
 	// Gör en AJAX-request som hämtar t.ex. screen1.html
 	$.ajax({url:'views.html',success: function(views) {
-		$.ajax({url:"screen"+id+".html", success: function(screen){
-        	console.log(screen);
+		views = $(views);
+		$.ajax({url:"screens/screen"+id+".html", success: function(screenHtml){
+			var screen = $(screenHtml);
+			screen.each(function(){
+        		for(var i=0; i < views.length; i++) {
+        			if(views[i].id == this.id) {
+        				$(this).html(views[i].innerHTML); //innerHTML hämtar all html som finns i views-taggen
+        			}
+        		}
+        	});
+        	$("#viewsContainer").html(screen);
     	}});
 	}});
 }
