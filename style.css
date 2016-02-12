@@ -45,3 +45,32 @@
 	border-bottom:2px solid black;
 	background-color: grey;
 }
+
+#view3_top_bar{
+	background-color: yellow;
+	border-bottom:2px solid black;
+}
+
+.dropdown-menu{
+	position:relative;
+
+}
+
+#view3_dropdown_items{
+	width: 100%;
+}
+
+#View3 .bottom_row{
+	margin-left:5%;
+	margin-right:5%;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+#View3 .top_row{
+	margin-left:5%;
+	margin-right:5%;
+	padding-top:10px;
+	padding-bottom:0px;
+	border-bottom:1px solid black;
+}
