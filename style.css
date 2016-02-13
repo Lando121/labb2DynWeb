@@ -1,3 +1,66 @@
+
+#partyPic {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%;
+  background-image: url(images/party.jpg);
+  background-size:contain;
+  z-index: -1;
+
+
+}
+
+#rubrik {
+	text-align: left;
+	background-color: rgba(255,255,255,0.5);
+	color: #FFFFFF;
+}
+
+/*screen 1*/
+.box {
+	
+	position: absolute;
+	left:0px;
+	right:0px;
+	top:250px;
+    margin-left: 30px;
+    width: 600px;
+    height: 350px;
+    opacity: 0.8;
+    background-color: #FFEBCD;
+    border: solid 1px silver;
+    box-shadow: 0px 3px 5px 1px silver;
+    
+}
+
+hr {
+    height: 0px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+
+}
+.inside {
+	padding-right: 10px;
+    padding-left: 20px;
+       
+}
+
+.createdinner {
+	width: 25%;
+	float:left;
+	text-align: left;
+	padding-top: 20px;
+}
+
+
+
+/*screen 2*/
 #mainContainer{
 
 	margin-left: 0;
