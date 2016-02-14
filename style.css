@@ -61,9 +61,10 @@ hr {
 
 
 /*screen 2*/
-#mainContainer{
-
-	margin-left: 0;
+/*view2*/
+#View2{
+	height: 100vh;	
+	border-right:1px solid silver;
 }
 
 #peopleInput{
@@ -71,47 +72,66 @@ hr {
 	text-align: left;
 	margin-left: 10%;
 }
-.subHeading{
+
+#view2_heading{
+	padding-left: 20px;
 	font-size:20px;
+
 }
 
 #View2 p{
 	font-size: 16px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-top:10px;
+	margin-bottom:10px;
 	
 }
 
+#view2_border_element{
+	border-top:1px solid black;
+	width: 80%;
+	margin-bottom:0px;
+	margin-top:0px;
+	margin-left:10%;
+	
+}
 #confirmButton{
+	background-color:#EB963B;
+	border: solid 1px silver;
+    box-shadow: 5px 5px 5px silver;
+	color:#737778;
+	font-weight: bold;
 	margin-left:15%;
 	width: 70%;
 }
 
 .left_align_par{
-	text-align: left;
-	
-	
+	text-align: left;	
 }
 
-
 .right_align_par{
-	text-align: right;
-
-	
+	text-align: right;	
 }
 
 .middle_align_par{
 	text-align:center;
-	
+}
+
+.orange_paragraph_view2{
+	color: #EB963B;
 }
 
 #grey_row_view2{
-	border-top:2px solid black;
-	border-bottom:2px solid black;
-	background-color: grey;
+	border-top:1px solid black;
+	border-bottom:1px solid black;
+	background-color: #737778;
 }
 
+/*view3 */
 #view3_top_bar{
-	background-color: yellow;
-	border-bottom:2px solid black;
+	background-color: #FFEBCD;
+	border-bottom:1px solid silver;
 }
 
 .dropdown-menu{
@@ -119,45 +139,118 @@ hr {
 
 }
 
+#view3_topBar_heading{
+	padding-left:0;
+	margin-bottom:0;
+	font-size: 20px;
+}
+
 #view3_dropdown_items{
 	width: 100%;
 }
 
-#View3 .bottom_row{
-	margin-left:5%;
-	margin-right:5%;
-	padding-top:10px;
-	padding-bottom:10px;
+
+#view3_dropdown_items{
+	margin-top:8px;
 }
 
-#View3 .top_row{
+#view3_select_dish_row{
 	margin-left:5%;
 	margin-right:5%;
 	padding-top:10px;
 	padding-bottom:0px;
-	border-bottom:1px solid black;
+	border-bottom:1px solid silver;
 }
-#View3{
-	border-left:2px solid black;
-	height: 100vh;
+#view3_search_row{
+	margin-left:5%;
+	margin-right:5%;
+	padding-top:10px;
+	padding-bottom:20px;
 }
+
+#view3_search_button{
+	border: solid 1px silver;
+    box-shadow: 5px 5px 5px silver;
+}
+
 
 .view3_dish_obj{
 	margin-left:auto;
 	margin-right:auto;
-	text-align: center;
-	border:1px solid black;
+	border:1px solid silver;
 }
 
-.no_border{
+.view3_dish_info{
+	margin-right: auto;
+	margin-left:auto;
 	border:none;
 }
 
-.dish_img{
+.view3_dish_name{
+	text-align: center;
+	padding-top:7px;
+	padding-bottom:7px;
+	font-weight: bold;
+}
+
+.view3_dish_img{
 	width:100%;
 }
 
 #view3_dish_row{
 
 	margin-top:50px;
+}
+
+/*screen3*/
+/*view4*/
+#View4{
+	border-top:1px solid silver;
+}
+#view4_description_column{
+	padding-left:40px;
+	padding-right:40px;
+}
+
+#view4_dish_img{
+	width:100%;
+}
+#back_to_select_dish_button{
+	background-color:#EB963B;
+	border: solid 1px black;
+    box-shadow: 5px 5px 5px black;
+	font-weight: bold;
+	width: 50%;
+}
+
+#view4_recipe_column{
+	padding:20px;
+	background-color:#FFEBCD;
+	border:1px solid silver;
+
+}
+
+#view4_recipe_middle_box{
+	border-top:1px solid silver;
+	border-bottom:1px solid silver;
+	padding-top:20px;
+	padding-bottom:20px;
+
+}
+
+.view4_ingredient_row{
+	padding:10px;
+}
+
+#view4_confirm_dish_row{
+	margin-top:30px;
+}
+
+#view4_confirm_dish_button{
+
+	background-color:#EB963B;
+	border: solid 1px black;
+    box-shadow: 5px 5px 5px black;
+	font-weight: bold;
+	width: 50%;
 }
