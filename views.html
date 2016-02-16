@@ -1,22 +1,24 @@
 <!-- Här ska vi lägga in all info för varje view, dvs all text och knappar etc.-->
-<div id="View1" >
-	<div id="party">
-	<div id="partyPic"></div>
-	</div>
-	<div class="box">
+<div id="View1">
+			<div id="party">
+			<div id="partyPic"></div>
+			</div>
+
+	<div class="row">
+	<div class="box col-xs-6">
 		<div class="inside">
-		<h1 id="header_box" class="col-xs-12"> A Home Dinner Service</h1> 
+		<h1> A Home Dinner Service</h1> 
 		<hr>
 		<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum </p>
 		
 		<div class="createdinner">
 		<span> start quickly </span>
-		<!-- går till screen 2--><button id="goToScreen2">Create new dinner</button>
+		<!-- går till screen 2--><button id="goToScreen2" type="button" class="btn btn-default">Create new dinner</button>
 		</div>
 		</div>
 	</div>
+	</div>
 </div>
-
 
 <!-- view2 -->
 <div id="View2">
@@ -50,7 +52,7 @@
 	<div class="row">
 		<div id="view3_top_bar" class="col-xs-12">
 			<div id="view3_select_dish_row"class="row">
-				<h2 id="view3_topBar_heading"class="subHeading col-xs-12"> SELECT DISH</p>
+				<h2 id="view3_topBar_heading"class="subHeading col-xs-12"> SELECT DISH</h2>
 			</div>
 			<div id="view3_search_row" class="row bottom_row">
   				<div class="col-xs-4">
@@ -59,6 +61,7 @@
       						<span class="input-group-btn">
         						<button id="view3_search_button"class="btn btn-default" type="button">search</button>
       						</span>
+
     				</div><!-- /input-group -->
   				</div><!-- /.col-lg-6 -->
 
@@ -76,8 +79,8 @@
 				</div>
 
 			</div><!-- /.row -->
-		</div>	
-	</div>	
+	</div>
+</div>	
 
 	<div id="view3_dish_row"class="row">
 		<div class="col-xs-1">
@@ -154,10 +157,8 @@
 
 		<!-- går till screen 1--><button id="goHome">Home</button>
 </div>
-				
 
 <div id="View4">
-	
 	<div id="view4_description_column"class="col-xs-6">
 		<div class="row">
 			<h1 id="view4_dish_name">TOAST</h1>
@@ -219,18 +220,106 @@
 				<button id="view4_confirm_dish_button" type="button" class=" btn btn-default">Confirm Dish</button>
 			</div>
 			<div class="col-xs-6">
-				<p class="right_align_par">SEK <b id="view4_total_cost"> 25,00</p>
+				<p class="right_align_par">SEK <b id="view4_total_cost"> 25,00 </b></p>
 			</div>
 		</div>
 	</div>
-		
-	
 </div>
 
-<div id="View5" class="col-xs-12">
-		Detta är view 5
+<div id="View5">
+	<div class="row">
+		<div class="col-xs-12" id="view56_subHeading">
+			<h2> My Dinner: 4 people </h2>
+			<button id="goBack" type="button" class="col-xs-4 btn btn-default">Go back and edit dinner</button>
+		</div>
+		<div class="row">
+		<div class="col-xs-6" id="view5_centerPics">
+			<div class="col-xs-4 dish_col">
+				<div class="row view3_dish_obj">
+					<img src="images/toast.jpg" alt="Smiley face" class="view3_dish_img ">
+				</div>
+				<div class="row view3_dish_obj view3_dish_name">
+					Toast
+				</div>
+				<div class="row view3_dish_info">
+					<p id="view5_price">77 kr</p>
+			<!-- kostanden ska in här -->
+				</div>
+			</div>
+			<div class="col-xs-4 dish_col">
+				<div class="row  view3_dish_obj">
+					<img src="images/bakedbrie.jpg" alt="Smiley face" class="view3_dish_img">
+				</div>
+				<div class="row view3_dish_obj view3_dish_name">
+					Baked brie
+				</div>
+				<div class="row view3_dish_info">
+					<p id="view5_price">122 kr</p>
+			<!-- kostanden ska in här -->
+				</div>
+				<!-- kostanden ska in här -->
+			</div>
+			<div class="col-xs-4 dish_col">
+				<div class="row view3_dish_obj">
+					<img src="images/sourdough.jpg" alt="Smiley face" class="view3_dish_img">
+				</div>
+				<div class="row view3_dish_obj view3_dish_name">
+					Sourdough
+				</div>
+				<div class="row view3_dish_info">
+					<p id="view5_price">50 kr</p>
+			<!-- kostanden ska in här -->
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-1" id="test2">
+			<p> Total:</p>
+			<p> 330 kr </p>
+
+		</div>
+	</div>
+	<div class="row">
+		<hr id="view5_hr">
+	</div>
+
+	<button id="view5_printRecipe" type="button" class="col-xs-4 btn btn-default">Print Full Recipe</button>
+
+
+</div>
 </div>
 
 <div id="View6" class="col-xs-12">
-		Detta är view 6
+	<div class="row">
+		<div class="col-xs-12" id="view56_subHeading">
+			<h2> My Dinner: 4 people </h2>
+			<button id="goBack" type="button" class="col-xs-4 btn btn-default">Go back and edit dinner</button>
+		</div>
+	</div>
+	<div class="row view6_dishrow">
+		<div class="col-xs-2">
+			<img src="images/toast.jpg" alt="Smiley face" class="view3_dish_img ">
+		</div>
+		<div class="col-xs-4">
+			<h1 id="view6_dishname"> Lasagne </h1>
+			<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+		</div>
+		<div class="col-xs-6">
+			<h1 id="view6_dishpreparation"> Preparation </h1>
+			<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+		</div>
+	</div>
+		<div class="row view6_dishrow">
+		<div class="col-xs-2">
+			<img src="images/sourdough.jpg" alt="Smiley face" class="view3_dish_img">
+		</div>
+		<div class="col-xs-4">
+			<h1 id="view6_dishname"> Sour Dough </h1>
+			<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+		</div>
+		<div class="col-xs-6">
+			<h1 id="view6_dishpreparation"> Preparation </h1>
+			<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+		</div>
+	</div>
+
 </div>

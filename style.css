@@ -17,8 +17,25 @@
 
 #rubrik {
 	text-align: left;
-	background-color: #fdfea5;
-	color: #FFFFFF;
+	background-color:#ffe066;
+	border: 1px solid black;
+	color: ;
+	opacity: 0.8;
+}
+
+#rubrik h1{
+	float:left;
+	margin-top:auto;
+	margin-bottom:auto;
+	padding-top:25px;
+	padding-bottom:25px;
+}
+
+#sub_heading_top_bar{
+	
+	position: relative;
+	top:40px;
+	margin-left:40px;
 }
 
 /*screen 1*/
@@ -52,10 +69,17 @@ hr {
 }
 
 .createdinner {
-	width: 25%;
+	width: 40%;
 	float:left;
 	text-align: left;
 	padding-top: 20px;
+}
+#goToScreen2{
+	background-color:#EB963B;
+	border: solid 2px black;
+	color:#737778;
+	font-weight: bold;
+
 }
 
 
@@ -253,4 +277,85 @@ hr {
     box-shadow: 5px 5px 5px black;
 	font-weight: bold;
 	width: 50%;
+}
+
+/*screen 4 - view 5*/
+#view56_subHeading {
+	background-color: #FFEBCD;
+	border: 1px solid black;
+	padding:20px;
+
+
+}
+
+#view56_subHeading h2{
+	margin-top:0;
+	margin-bottom:0;
+	
+	float:left;
+	
+
+}
+#view56_subHeading button{
+	margin-top:0;
+	margin-bottom:0;
+	background-color:#EB963B;
+	border: solid 2px black;
+	float:right;
+	width:15%;
+	
+
+}
+#view5_centerPics{
+	padding-right:50px;
+	padding-left:50px;
+	margin-top:40px;
+	border-right:1px solid black;
+	left: 25%;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+#test2{
+	float:right;
+	right:15%;
+	margin-top: 230px;
+
+
+}
+#view5_price{
+	text-align: right;
+	
+	
+}
+
+#view5_hr{
+	width:80%;
+}
+
+#view5_printRecipe{
+	background-color:#EB963B;
+	border: solid 1px black;
+    box-shadow: 5px 5px 5px black;
+	font-weight: bold;
+	width: 15%;
+	left: 42.75%;
+
+}
+#view6_dishname{
+	padding: 0;
+	margin-top: 0px;
+	font-size: 28px;
+
+}
+
+#view6_dishpreparation{
+	padding: 0;
+	margin-top: 0px;
+	font-size: 18px;
+}
+
+.view6_dishrow{
+	margin-top: 30px;
+
 }
