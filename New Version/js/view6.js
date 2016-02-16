@@ -1,17 +1,19 @@
 //$.getScript("js/view3.js");
 var view3Func = function (container, model){
-	//toast
-	this.View6 = container.find("#view6_toast");
-	this.View6.html(model.getDishById(1).name);
-	this.View6 = container.find("#toast_description");
-	this.View6.html(model.getDishById(1).description);
+
+	$("#view6_amount_people").html(model.getNumberOfGuests());
 	
+	//toast
+	$("#view6_dish1_img").attr("src", "images/" + model.getDishById(1).image);
+	$("#view6_toast").html(model.getDishById(1).name);
+	$("#toast_description").html(model.getDishById(1).description);
+
 
 	//sugardough
-	this.View6 = container.find("#view6_sour");
-	this.View6.html(model.getDishById(2).name);
-	this.View6 = container.find("#sour_description");
-	this.View6.html(model.getDishById(2).description);
+	$("#view6_dish2_img").attr("src", "images/" + model.getDishById(2).image);
+	$("#view6_sour").html(model.getDishById(2).name);
+	$("#sour_description").html(model.getDishById(3).description);
+	
 
 }
 $(function() {

@@ -1,47 +1,43 @@
 //$.getScript("js/view3.js");
 var view3Func = function (container, model){
+
+	var numGuest = model.getNumberOfGuests();
+	
+	$("#view5_amount_people").html(model.getNumberOfGuests());
 	/*Toast*/
-	this.View5 = container.find("#view5_toast_name");
-	this.View5.html(model.getDishById(1).name);
+	$("#view5_dish1_img").attr("src", "images/" + model.getDishById(1).image);
+	$("#view5_dish1_name").html(model.getDishById(1).name);
 	//price
-	this.View5 = container.find("#view5_price_toast")
 	var totalPrice1 = 0;
 	for(j=0; j < model.getDishById(1).ingredients.length; j++){
 		//console.log(j + " " + model.getDishById(1).ingredients[j]);
 		totalPrice1 = totalPrice1 + model.getDishById(1).ingredients[j].price;
 	}
-	this.View5.html(totalPrice1 + "kr");
+	$("#view5_price_dish1").html(totalPrice1*numGuest + "kr");
 
-
-
-	/*Baked Brie*/
-	this.View5 = container.find("#view5_brie_name");
-	this.View5.html(model.getDishById(3).name);
+	$("#view5_dish2_img").attr("src", "images/" + model.getDishById(3).image);
+	$("#view5_dish2_name").html(model.getDishById(3).name);
 	//price
-	this.View5 = container.find("#view5_price_brie");
 	var totalPrice2 = 0;
 	for(j=0; j < model.getDishById(3).ingredients.length; j++){
-		//console.log(j + " " + model.getDishById(3).ingredients[j]);
+		//console.log(j + " " + model.getDishById(1).ingredients[j]);
 		totalPrice2 = totalPrice2 + model.getDishById(3).ingredients[j].price;
 	}
-	this.View5.html(totalPrice2 + "kr");
+	$("#view5_price_dish2").html(totalPrice2*numGuest + "kr");
 
-
-	/* SourDough*/
-	this.View5 = container.find("#view5_sour_name");
-	this.View5.html(model.getDishById(2).name);
+	$("#view5_dish3_img").attr("src", "images/" + model.getDishById(2).image);
+	$("#view5_dish3_name").html(model.getDishById(2).name);
 	//price
-	this.View5 = container.find("#view5_price_sour");
 	var totalPrice3 = 0;
 	for(j=0; j < model.getDishById(2).ingredients.length; j++){
-		console.log(j + " " + model.getDishById(2).ingredients[j]);
+		//console.log(j + " " + model.getDishById(1).ingredients[j]);
 		totalPrice3 = totalPrice3 + model.getDishById(2).ingredients[j].price;
 	}
-	this.View5.html(totalPrice3 + "kr");
+	$("#view5_price_dish3").html(totalPrice3*numGuest + "kr");
 
-	/* Total cost*/
-	this.View5 = container.find("#total_price");
-	this.View5.html(totalPrice1 + totalPrice2 + totalPrice3 + "kr");
+
+
+	$("#total_price").html((totalPrice1 + totalPrice2 + totalPrice3)*numGuest + "kr");
 
 
 	

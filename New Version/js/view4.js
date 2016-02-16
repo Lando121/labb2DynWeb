@@ -1,31 +1,27 @@
 //$.getScript("js/view3.js");
 var view4Func = function (container, model){
-	this.View4 = container.find("#view4_dish_name");
-	this.View4.html(model.getDishById(100).name);
 
-	this.View4 = container.find("#view4_description_paragraph");
-	this.View4.html(model.getDishById(100).description);
-
-	this.View4 = container.find("#view4_amount_of_people");
-	this.View4.html(model.getNumberOfGuests());
-
-
-
-	this.View4 = container.find("#view4_recipe_middle_box");
+	$("#view4_dish_img").attr("src", "images/" +  model.getDishById(100).image);
+	$("#view4_dish_name").html(model.getDishById(100).name);
+	$("#view4_description_paragraph").html(model.getDishById(100).description);
+	$("#view4_amount_of_people").html(model.getNumberOfGuests());
+	
+	var middleBox = container.find("#view4_recipe_middle_box");
 	var dish = model.getDishById(100).ingredients; 
 	var totalPrice = 0;
+	var numGuest = model.getNumberOfGuests();
 	for(i = 0; i < dish.length; i++){
 		totalPrice = totalPrice + dish[i].price;
-		this.View4.append('<div class="row view4_ingredient_row">');
-		this.View4.append('<div class="col-xs-2">' + dish[i].quantity + " " + dish[i].unit + "</div>");
-		this.View4.append('<div class="col-xs-6">' + dish[i].name + "</div>");
-		this.View4.append('<div class="col-xs-2 right_align_par">' + "SEK" + "</div>");
-		this.View4.append('<div class="col-xs-2 right_align_par">' + dish[i].price + "</div>");
-		this.View4.append("</div>");
+		middleBox.append('<div class="row view4_ingredient_row">');
+		middleBox.append('<div class="col-xs-2">' + dish[i].quantity*numGuest + " " + dish[i].unit + "</div>");
+		middleBox.append('<div class="col-xs-6">' + dish[i].name + "</div>");
+		middleBox.append('<div class="col-xs-2 right_align_par">' + "SEK" + "</div>");
+		middleBox.append('<div class="col-xs-2 right_align_par">' + dish[i].price*numGuest + "</div>");
+		middleBox.append("</div>");
 	
 	}
-	this.View4 = container.find("#view4_total_cost");
-	this.View4.html(totalPrice);
+	
+	$("#view4_total_cost").html(totalPrice*numGuest);
 }
 
 $(function() {
