@@ -1,5 +1,5 @@
 //$.getScript("js/view3.js");
-var view3Func = function (container){
+var view3Func = function (container,model){
 
 	
 }
@@ -16,5 +16,5 @@ $(function() {
 	//exampleView.numberOfGuests.html(model.getNumberOfGuests());
 	//exampleView.totalCost.html(model.getTotalMenuPrice());
 
-	var view3 = new view3Func($("#View2"));
+	var view3 = new view3Func($("#View2"),model);
 });

@@ -1,9 +1,31 @@
 //$.getScript("js/view3.js");
 var view3Func = function (container,model){
 
-	this.View3 = container.find("#view3_toast_img");
-	var text = model.getDishById(1).image;
-	this.View3.src = text;
+	this.View3 = container.find("#view3_dish1_name");
+	this.View3.html(model.getDishById(1).name);
+	this.View3 = container.find("#view3_dish1_desc");
+	this.View3.html(model.getDishById(1).description);
+
+	this.View3 = container.find("#view3_dish2_name");
+	this.View3.html(model.getDishById(3).name);
+	this.View3 = container.find("#view3_dish2_desc");
+	this.View3.html("<p>" + model.getDishById(3).description + "</p>");
+		
+
+	this.View3 = container.find("#view3_dish3_name");
+	this.View3.html(model.getDishById(2).name);
+	this.View3 = container.find("#view3_dish3_desc");
+	this.View3.html(model.getDishById(2).description);
+
+	this.View3 = container.find("#view3_dish4_name");
+	this.View3.html(model.getDishById(100).name);
+	this.View3 = container.find("#view3_dish4_desc");
+	this.View3.html(model.getDishById(100).description);
+
+	this.View3 = container.find("#view3_dish5_name");
+	this.View3.html(model.getDishById(200).name);
+	this.View3 = container.find("#view3_dish5_desc");
+	this.View3.html(model.getDishById(200).description);
 
 	
 }
