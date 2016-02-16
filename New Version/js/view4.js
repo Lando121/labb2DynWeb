@@ -1,10 +1,13 @@
 //$.getScript("js/view3.js");
-var view3Func = function (container, model){
+var view4Func = function (container, model){
 	this.View4 = container.find("#view4_dish_name");
 	this.View4.html(model.getDishById(100).name);
 
 	this.View4 = container.find("#view4_description_paragraph");
 	this.View4.html(model.getDishById(100).description);
+
+	this.View4 = container.find("#view4_amount_of_people");
+	this.View4.html(model.getNumberOfGuests());
 
 
 
@@ -38,5 +41,5 @@ $(function() {
 	//exampleView.numberOfGuests.html(model.getNumberOfGuests());
 	//exampleView.totalCost.html(model.getTotalMenuPrice());
 
-	var view3 = new view3Func($("#View4"), model);
+	var view3 = new view4Func($("#View4"), model);
 });

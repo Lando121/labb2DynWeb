@@ -1,6 +1,15 @@
 //$.getScript("js/view3.js");
-var view3Func = function (container,model){
-
+var view2Func = function (container,model){
+	if(document.getElementById("View4") != null){
+		this.View2 = container.find("#view2_pending_cost");
+		var dish = model.getDishById(100).ingredients;
+		var totalPrice = 0;
+		for(i = 0; i < dish.length; i++){
+			totalPrice = totalPrice + dish[i].price;
+		}
+		this.View2.html(totalPrice);
+		container.find("#view2_sek_paragraph").html("SEK " + totalPrice);
+	}
 	
 }
 $(function() {
@@ -16,5 +25,5 @@ $(function() {
 	//exampleView.numberOfGuests.html(model.getNumberOfGuests());
 	//exampleView.totalCost.html(model.getTotalMenuPrice());
 
-	var view3 = new view3Func($("#View2"),model);
+	var view3 = new view2Func($("#View2"),model);
 });
