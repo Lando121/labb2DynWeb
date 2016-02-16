@@ -1,7 +1,17 @@
+//$.getScript("js/view3.js");
+var Test1 = function (container){
+
+	this.View3 = container.find("#test");
+	this.View3.html("hejhej");
+	
+}
 $(function() {
 	//We instantiate our model
 	var model = new DinnerModel();
-	var viewCache; 
+	var viewCache;
+
+	
+	
 
 	//And create the needed controllers and views
 	//var exampleView = new ExampleView($("#exampleView"));
@@ -10,11 +20,14 @@ $(function() {
 
 	showScreens(1);
 
+	var view3 = new Test1($("#View3"));
+
 	$.ajaxSetup ({
 	    // Disable caching of AJAX responses
 	    cache: false
 	});
 
+ 
 });
 
 // skapar en funktion som displayar screen
@@ -33,8 +46,11 @@ function showScreens(id){
         		}
         	});
         	$("#viewsContainer").html(screen);
+        	
+
     	}});
 	}});
+
 }
 
 
