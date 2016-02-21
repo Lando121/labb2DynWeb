@@ -1,7 +1,7 @@
 //$.getScript("js/view3.js");
 var view2Func = function (container,model){
 	if(document.getElementById("View4") != null){
-		var dish = model.getDishById(100).ingredients;
+		var dish = model.getDishById(1).ingredients;
 		var totalPrice = 0;
 		var numGuest = model.getNumberOfGuests();
 		for(i = 0; i < dish.length; i++){

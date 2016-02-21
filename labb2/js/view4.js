@@ -1,13 +1,13 @@
 //$.getScript("js/view3.js");
 var view4Func = function (container, model){
 
-	$("#view4_dish_img").attr("src", "images/" +  model.getDishById(100).image);
-	$("#view4_dish_name").html(model.getDishById(100).name);
-	$("#view4_description_paragraph").html(model.getDishById(100).description);
+	$("#view4_dish_img").attr("src", "images/" +  model.getDishById(1).image);
+	$("#view4_dish_name").html(model.getDishById(1).name);
+	$("#view4_description_paragraph").html(model.getDishById(1).description);
 	$("#view4_amount_of_people").html(model.getNumberOfGuests());
 	
 	var middleBox = container.find("#view4_recipe_middle_box");
-	var dish = model.getDishById(100).ingredients; 
+	var dish = model.getDishById(1).ingredients; 
 	var totalPrice = 0;
 	var numGuest = model.getNumberOfGuests();
 	for(i = 0; i < dish.length; i++){
