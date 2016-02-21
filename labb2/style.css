@@ -15,27 +15,34 @@
 
 }
 
+
+
 #rubrik {
 	text-align: left;
 	background-color:#ffe066;
 	border: 1px solid black;
 	color: ;
 	opacity: 0.8;
+	padding-left:5vw;
 }
 
 #rubrik h1{
 	float:left;
-	margin-top:auto;
-	margin-bottom:auto;
 	padding-top:25px;
 	padding-bottom:25px;
 }
 
 #sub_heading_top_bar{
 	
-	position: relative;
+	margin-left:0px;
+}
+
+@media (min-width: 750px) {
+  #sub_heading_top_bar{
+  	position: relative;
 	top:40px;
-	margin-left:40px;
+	
+  }
 }
 
 /*screen 1*/
@@ -87,8 +94,7 @@ hr {
 /*screen 2*/
 /*view2*/
 #View2{
-	height: 100vh;	
-	border-right:1px solid silver;
+	
 }
 
 #peopleInput{
@@ -130,6 +136,13 @@ hr {
 	width: 70%;
 }
 
+@media (max-width: 750px) {
+  #confirmButton{
+  	margin-left:0%;
+  	width: 100%;
+  }
+}
+
 .left_align_par{
 	text-align: left;	
 }
@@ -153,6 +166,9 @@ hr {
 }
 
 /*view3 */
+#View3{
+	border-left:1px solid silver;
+}
 #view3_top_bar{
 	background-color: #FFEBCD;
 	border-bottom:1px solid silver;
@@ -221,10 +237,12 @@ hr {
 	width:100%;
 }
 
-#view3_dish_row{
 
+#view3_dish_row{
 	margin-top:50px;
 }
+
+
 
 /*screen3*/
 /*view4*/
@@ -245,6 +263,12 @@ hr {
     box-shadow: 5px 5px 5px black;
 	font-weight: bold;
 	width: 50%;
+}
+
+@media (max-width: 750px) {
+	#back_to_select_dish_button{
+		width:100%;
+	}
 }
 
 #view4_recipe_column{
@@ -279,6 +303,13 @@ hr {
 	width: 50%;
 }
 
+@media (max-width: 750px) {
+	#view4_confirm_dish_button{
+		width:100%;
+	}
+}
+
+
 /*screen 4 - view 5*/
 #view56_subHeading {
 	background-color: #FFEBCD;
@@ -291,10 +322,15 @@ hr {
 #view56_subHeading h2{
 	margin-top:0;
 	margin-bottom:0;
-	
 	float:left;
 	
 
+}
+
+@media (max-width: 750px) {
+  #view56_subHeading h2{
+  	width:100%;
+  }
 }
 #view56_subHeading button{
 	margin-top:0;
@@ -306,6 +342,12 @@ hr {
 	
 
 }
+
+@media (max-width: 750px) {
+  #view56_subHeading button{
+  	width:100%;
+  }
+}
 #view5_centerPics{
 	padding-right:50px;
 	padding-left:50px;
@@ -316,10 +358,17 @@ hr {
 	margin-right: auto;
 
 }
+@media (max-width: 750px) {
+  #view5_centerPics{
+  	padding-right:0;
+  	padding-left:0;
+  }
+}
 #test2{
 	float:right;
 	right:15%;
-	margin-top: 230px;
+	margin-top:40px;
+	
 
 
 }
@@ -333,14 +382,30 @@ hr {
 	width:80%;
 }
 
+#view5_button_row{
+	text-align:center;
+}
+
 #view5_printRecipe{
+	
 	background-color:#EB963B;
 	border: solid 1px black;
     box-shadow: 5px 5px 5px black;
 	font-weight: bold;
-	width: 15%;
-	left: 42.75%;
+}
 
+@media (min-width: 750px) {
+  #view5_printRecipe{
+  	width:25%;
+  	left:37%;
+  }
+}
+
+@media (max-width: 750px) {
+  #view5_printRecipe{
+  	width:50%;
+  	left:25%;
+  }
 }
 .view6_dishname{
 	padding: 0;

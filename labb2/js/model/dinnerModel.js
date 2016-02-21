@@ -3,12 +3,12 @@ var DinnerModel = function() {
  
 	//TODO Lab 2 implement the data structure that will hold number of guest
 	// and selected dinner options for dinner menu
-	var numGuests = 2;
+	var numGuests = 5;
 	var selectedDishes = [{
 		'id':1,
-		'name':'French toast',
+		'name':'French toast!!',
 		'type':'starter',
-		'image':'images/toast.jpg',
+		'image':'toast.jpg',
 		'description':"In a large mixing bowl, beat the eggs. Add the milk, brown sugar and nutmeg; stir well to combine. Soak bread slices in the egg mixture until saturated. Heat a lightly oiled griddle or frying pan over medium high heat. Brown slices on both sides, sprinkle with cinnamon and serve hot.",
 		'ingredients':[{ 
 			'name':'eggs',
@@ -97,6 +97,19 @@ var DinnerModel = function() {
 				console.log("no dish choosed for that type");
 			}
 		}
+	}
+
+	this.getTypeDish = function(type) {
+		console.log(type);
+		console.log(dishes[1].type);
+		//TODO Lab 2
+		var typeDishes = new Array();
+		for(i = 0; i < dishes.length; i++){
+			if(dishes[i].type == type){
+				typeDishes.push(dishes[i]);
+			}
+		}
+		return typeDishes;
 	}
 
 	//Returns all the dishes on the menu.
