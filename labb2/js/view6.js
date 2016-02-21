@@ -7,18 +7,7 @@ var view3Func = function (container, model){
 		$("#View6").append("<div class='row view6_dishrow'> <div class='col-xs-6 col-sm-2'><img id='view6_dish" + k + "_img' src ='images/" + menu[k].image +  "' class='view3_dish_img'></div><div class='col-xs-6 col-sm-4'><h1 class='view6_dishname' id='view6_dish" + k + "'>" + menu[k].name + "</h1><p id='dish" + k + "_description'>" + menu[k].description + "</p></div><div class='col-xs-12 col-sm-6'><h1 id='view6_dishpreparation'>Preparation</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div></div>")
 	}
 
-	$("#view6_amount_people").html(model.getNumberOfGuests());
 	
-	//toast
-	$("#view6_dish1_img").attr("src", "images/" + model.getDishById(1).image);
-	$("#view6_toast").html(model.getDishById(1).name);
-	$("#toast_description").html(model.getDishById(1).description);
-
-
-	//sugardough
-	$("#view6_dish2_img").attr("src", "images/" + model.getDishById(2).image);
-	$("#view6_sour").html(model.getDishById(2).name);
-	$("#sour_description").html(model.getDishById(3).description);
 	
 
 }
