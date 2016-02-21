@@ -4,76 +4,7 @@ var DinnerModel = function() {
 	//TODO Lab 2 implement the data structure that will hold number of guest
 	// and selected dinner options for dinner menu
 	var numGuests = 5;
-	var selectedDishes = [{
-		'id':1,
-		'name':'French toast!!',
-		'type':'starter',
-		'image':'toast.jpg',
-		'description':"In a large mixing bowl, beat the eggs. Add the milk, brown sugar and nutmeg; stir well to combine. Soak bread slices in the egg mixture until saturated. Heat a lightly oiled griddle or frying pan over medium high heat. Brown slices on both sides, sprinkle with cinnamon and serve hot.",
-		'ingredients':[{ 
-			'name':'eggs',
-			'quantity':0.5,
-			'unit':'',
-			'price':10
-			},{
-			'name':'milk',
-			'quantity':30,
-			'unit':'ml',
-			'price':6
-			},{
-			'name':'brown sugar',
-			'quantity':7,
-			'unit':'g',
-			'price':1
-			}]
-			},{
-		'id':3,
-		'name':'Baked Brie with Peaches',
-		'type':'starter',
-		'image':'bakedbrie.jpg',
-		'description':"Here is how you make it... Lore ipsum...",
-		'ingredients':[{ 
-			'name':'round Brie cheese',
-			'quantity':10,
-			'unit':'g',
-			'price':8
-			},{
-			'name':'raspberry preserves',
-			'quantity':15,
-			'unit':'g',
-			'price':10
-			},{
-			'name':'peaches',
-			'quantity':1,
-			'unit':'',
-			'price':4
-			}]
-		},{
-		'id':2,
-		'name':'Sourdough Starter',
-		'type':'starter',
-		'image':'sourdough.jpg',
-		'description':"Here is how you make it... Lore ipsum...",
-		'ingredients':[{ 
-			'name':'active dry yeast',
-			'quantity':0.5,
-			'unit':'g',
-			'price':4
-			},{
-			'name':'warm water',
-			'quantity':30,
-			'unit':'ml',
-			'price':0
-			},{
-			'name':'all-purpose flour',
-			'quantity':15,
-			'unit':'g',
-			'price':2
-			}]
-		}
-
-
-		];
+	var selectedDishes = new Array();
 
 
 	this.setNumberOfGuests = function(num) {
@@ -91,8 +22,8 @@ var DinnerModel = function() {
 	this.getSelectedDish = function(type) {
 		//TODO Lab 2
 		for(i = 0; i < selectedDishes.length; i++){
-			if(selectedDishes[i].type.equals(type)){
-				return selectedDishes[i];
+			if(getDishById(selectedDishes[i]).type == type){
+				return getDishById(selectedDishes[i]);
 			} else {
 				console.log("no dish choosed for that type");
 			}
@@ -115,7 +46,11 @@ var DinnerModel = function() {
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
 		//TODO Lab 2
-		return selectedDishes;
+		var fullMenu = new Array();
+		for(i = 0; i < selectedDishes.length ; i++){
+			fullMenu.push(getDishById(selectedDishes[i]));
+		}
+		return fullMenu;
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
@@ -123,7 +58,7 @@ var DinnerModel = function() {
 		//TODO Lab 2 PSEUDO!!
 		var ingredientsList = new Array();
 		for(i = 0; i < selectedDishes.length; i++){
-			ingredientsList.push(selectedDishes[i].ingredients);
+			ingredientsList.push(getDishById(selectedDishes[i]).ingredients);
 		}
 		return ingredientsList;
 	}
@@ -133,12 +68,12 @@ var DinnerModel = function() {
 		//TODO Lab 2
 		var totalCost = 0;
 		for(i = 0; i < selectedDishes.length; i++){
-			for(j = 0; j < selectedDishes[i].ingredients.length; j++){
-				totalCost = totalCost + (this.getNumberOfGuests() * selectedDishes[i].ingredients[j].price);
+			var currentDish = getDishById(selectedDishes[i]);
+			for(j = 0; j < currentDish.ingredients.length; j++){
+				totalCost = totalCost + (this.getNumberOfGuests() * currentDish.ingredients[j].price);
 			}
 			
 		}
-		console.log(totalCost);
 		return totalCost;
 	}
 
@@ -157,19 +92,19 @@ var DinnerModel = function() {
 		//TODO Lab 2 
 	var dish = getDishById(id);
 	for( j= 0; j < selectedDishes.length; j++){
-		if(dish.type==selectedDishes[j].type){
+		if(dish.type==getDishById(selectedDishes[j]).type){
 			delete selectedDishes[j];
-			selectedDishes[j] = dish;
+			selectedDishes[j] = id;
 			return;
 		}
 		}
-		selectedDishes.push(dish);
+		selectedDishes.push(id);
 	}
 
 	//Removes dish from menu
 	this.removeDishFromMenu = function(id) {
 		for(i = 0; i < selectedDishes.length; i++){
-			if(selectedDishes[i].id == id){
+			if(selectedDishes[i] == id){
 				selectedDishes.splice(i, 1);
 			}
 		}
