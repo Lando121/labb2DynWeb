@@ -2,6 +2,18 @@
 var view3Func = function (container, model){
 
 	var numGuest = model.getNumberOfGuests();
+	var menu = model.getFullMenu();
+	var totalCost = 0;
+	for(k = 0; k<menu.length; k++){
+		console.log(menu[k].id);
+		console.log(model.getDishPrice(menu[k].id));
+		totalCost = totalCost + model.getDishPrice(menu[k].id)*numGuest;
+		$("#view5_centerPics").append("<div class='col-xs-12 col-sm-4 _dish_col'><div class='row view3_dish_obj'><img src='images/" + menu[k].image + "' class='view3_dish_img'></div>" + "<div class='row view3_dish_obj view3_dish_name' id='view5_dish'" + k +"_name'>"+ menu[k].name + "</div>" +"<div class='row view3_dish_info'><p class='view5_price' id='view5_price_dish"+ k + "'>" + model.getDishPrice(menu[k].id)*numGuest +" kr</p></div></div>");
+		
+	}
+
+	$("#total_price").html(totalCost + " kr");
+	
 	
 /*	$("#view5_amount_people").html(model.getNumberOfGuests());
 	//Toast
@@ -40,25 +52,7 @@ var view3Func = function (container, model){
 	$("#total_price").html((totalPrice1 + totalPrice2 + totalPrice3)*numGuest + "kr");
 */
 	$("#view5_amount_people").html(model.getNumberOfGuests());
-	var totalPrice = 0;
-	var menu = model.getFullMenu();
-	for(k=1; k<menu.length+1; k++){
 	
-		$("#view5_dish" + k + "_img").attr("src", "images/" + menu[k-1].image); 
-		$("#view5_dish" + k + "_name").html(menu[k-1].name);
-
-		var price = 0;
-		for(j=0; j < menu[k-1].ingredients.length; j++){
-			//console.log(j + " " + model.getDishById(1).ingredients[j]);
-			price = price + menu[k-1].ingredients[j].price;
-		}
-
-		$("#view5_price_dish" + k).html(price*numGuest + "kr");
-
-		totalPrice = totalPrice + price;
-	}
-
-	$("#total_price").html(totalPrice*numGuest + "kr");
 
 
 	
