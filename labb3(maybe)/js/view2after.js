@@ -15,7 +15,7 @@ var view2afterFunc = function (container,model){
 			
 			totalPrice = model.getDishPrice(menu[m].id)*numGuest;
 			totalCost = totalCost + totalPrice;
-			$("#view2after").append("<div class='col-xs-6 left_align_par orange_paragraph_view2' id='view2after_name'" +"'>"+ menu[m].name + "</div>" 
+			$("#view2after").append("<div dishID='" + menu[m].id + "' class='col-xs-6 left_align_par orange_paragraph_view2 view2_menuItem' id='view2after_name'" +"'>"+ menu[m].name + "</div>" 
 				+ "<div class='col-xs-6 right_align_par orange_paragraph_view2' id='view2after_pending_cost'"+ "'>" + totalPrice + "</div><div class='clearfix'></div>");
 			//$("#view2after_pending_cost").html(totalPrice);
 			//$("#view2after_name").html(menu[m].name);

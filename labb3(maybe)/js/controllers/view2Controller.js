@@ -14,11 +14,17 @@ var view2Controller = function(view, model) {
 });
 
  	}
-
- 	$("#view2after_name").click(function(){
+ 
+ 	$(".view2_menuItem").on("click",function(event){
+ 			console.log("dad");
+ 			model.setSpecificDish(this.getAttribute("dishID"));
 			$("#View3").hide();
 			$("#View4").show();
-			$("#view2after_name").html(model.getSelectedDish());
+			 console.log("You clicked on: ", event.target);
+
+			 			
+
+		
 					
 
  	});
