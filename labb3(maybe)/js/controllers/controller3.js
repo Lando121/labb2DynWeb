@@ -1,6 +1,6 @@
-var ViewController = function(view, model ) {
+var View3Controller = function(view, model) {
  
- 	$("#peopleInput").val(numGuest);
+ 
 
 
 
