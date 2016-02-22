@@ -166,9 +166,9 @@ var DinnerModel = function() {
 	}
 	var notifyObservers = function(obj) {
 		
-		for(i=0 ; i<obsArray.length; i++){
-			obsArray[i];
-			obsArray[i].update(obs);
+		for(u=0 ; u<obsArray.length; u++){
+			obsArray[u];
+			obsArray[u].update(obj);
 			
 		}
 	}
