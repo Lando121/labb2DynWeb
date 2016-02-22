@@ -6,7 +6,7 @@ var DinnerModel = function() {
 	var numGuests = 2;
 	var selectedDishes = [2, 100, 200];
 	var obsArray = new Array;
-	var selectedDish;
+	var specificDish = 3;
 
 
 	this.setNumberOfGuests = function(num) {
@@ -15,17 +15,17 @@ var DinnerModel = function() {
 		notifyObservers();
 	}
 
-	this.setSelectedDish = function(id){
-		if(id == null){
-			selectedDish = null;
-		} else {
-			selectedDish = getDishById(id);
-		}
+	this.setSpecificDish = function(id){
+		specificDish = id;
+		
 		
 	}
 
-	this.getSelectedDish = function(){
-		return selectedDish;
+	this.getSpecificDish = function(){
+		if(specificDish == null){
+			return null;
+		}
+		return this.getDishById(specificDish);
 	}
 
 
@@ -36,7 +36,7 @@ var DinnerModel = function() {
 	}
 
 	this.getDishById = function(id) {
-	
+		
 		for(i = 0; i < dishes.length; i++){	
 			if(id==dishes[i].id) {
 				return dishes[i];
