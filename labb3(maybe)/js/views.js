@@ -9,7 +9,6 @@ var view2afterFunc = function (container,model){
 
 //view2 screen after pending update
 	this.load = function(){
-		
 		var numGuest = model.getNumberOfGuests();
 		$("#peopleInput").val(numGuest);	
 		var menu = model.getFullMenu();
@@ -17,9 +16,10 @@ var view2afterFunc = function (container,model){
 		
 		$("#view2after").html("");
 		for(m = 0; m<menu.length; m++){
-			dishPrice = model.getDishPrice(menu[m].id);
-			totalPrice = dishPrice*numGuest;
-			totalCost = totalCost + dishPrice*numGuest;
+			console.log(numGuest);
+
+			totalPrice = model.getDishPrice(menu[m].id)*numGuest;
+			totalCost = totalCost + model.getDishPrice(menu[m].id)*numGuest;
 			$("#view2after").append("<div class='col-xs-6 left_align_par orange_paragraph_view2' id='view2after_name'" +"'>"+ menu[m].name + "</div>" 
 				+ "<div class='col-xs-6 right_align_par orange_paragraph_view2' id='view2after_pending_cost'"+ "'>" + totalPrice + "</div><div class='clearfix'></div>");
 			//$("#view2after_pending_cost").html(totalPrice);
@@ -166,8 +166,12 @@ $(function() {
 	var view1 = new view1Func($("#View1"),model);
 
 	var view2after = new view2afterFunc($("#view2after"),model);
+
 	view2after.load();
+<<<<<<< Updated upstream
 	model.addObserver(view2after);
+=======
+>>>>>>> Stashed changes
 
 	var view3 = new view3Func($("#View3"),model);
 	view3.load();
