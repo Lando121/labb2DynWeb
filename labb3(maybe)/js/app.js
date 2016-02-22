@@ -26,6 +26,7 @@ $(function() {
 	var view4 = new view4Func($("#View4"),model);
 	model.addObserver(view4);
 	view4.load();
+	var view4Cont = new view4Controller(view4, model);
 
 
 	var view5 = new view5Func($("#View5"),model);

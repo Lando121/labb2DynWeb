@@ -12,13 +12,15 @@ var view3Controller = function(view, model){
 		view.load();	
 	});
 
-
 	$(".view3_dish_col").on("click", function(){
-			model.setSpecificDish(this.getAttribute("data-internalid"));
+			model.setSpecificDish(this.getAttribute("dishID"));
 			$("#View3").hide();
 			$("#View4").show();
 
+
 	});
+	
+
 	
 
 
