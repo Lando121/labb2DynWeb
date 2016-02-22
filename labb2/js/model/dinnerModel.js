@@ -3,8 +3,7 @@ var DinnerModel = function() {
  
 	//TODO Lab 2 implement the data structure that will hold number of guest
 	// and selected dinner options for dinner menu
-	var numGuests = 2;
-	$("#peopleInput").html(numGuests);
+	var numGuests = 4;
 	var selectedDishes = [2, 100, 200];
 
 
