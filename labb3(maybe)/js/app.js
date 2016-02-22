@@ -16,6 +16,7 @@ $(function() {
 	var view2after = new view2afterFunc($("#view2after"),model);
 	view2after.load();
 	model.addObserver(view2after);
+	var view2Cont = new view2Controller(view2after, model);
 
 	var view3 = new view3Func($("#View3"),model);
 	view3.load();
