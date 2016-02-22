@@ -2,12 +2,7 @@
 var view2afterFunc = function (container,model){
 //view2 screen after pending update
 	var numGuest = model.getNumberOfGuests();
-<<<<<<< Updated upstream
 	$("#peopleInput").val(numGuest);	
-=======
-	$("#peopleInput").val(numGuest);
-;	console.log(model.getNumberOfGuests());
->>>>>>> Stashed changes
 	var menu = model.getFullMenu();
 	var totalCost = 0;
 	model.addObserver(this);
@@ -30,11 +25,6 @@ var view2afterFunc = function (container,model){
 
 }
 
-<<<<<<< Updated upstream
-=======
-var update = function(obj){
-	$("peopleInput").update(model.getNumberOfGuests());
->>>>>>> Stashed changes
 
 
 	
