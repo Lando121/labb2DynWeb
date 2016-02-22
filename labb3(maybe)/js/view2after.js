@@ -23,11 +23,17 @@ var view2afterFunc = function (container,model){
 
 }
 
+var update = function(obj){
+
+
+}
+
 	
 $(function() {
 	//We instantiate our model
 	var model = new DinnerModel();
 	var viewCache;
+	model.addObserver(this);
 
 	
 	

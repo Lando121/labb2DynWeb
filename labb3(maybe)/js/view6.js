@@ -12,12 +12,18 @@ var view6Func = function (container, model){
 	
 
 }
+
+var update = function(obj){
+
+
+}
+
 $(function() {
 	//We instantiate our model
 	var model = new DinnerModel();
 	var viewCache;
 
-	
+	model.addObserver(this);
 	
 
 	//And create the needed controllers and views

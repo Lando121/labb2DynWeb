@@ -11,13 +11,18 @@ var view3Func = function (container,model){
 	}	
 	
 }
-$(function() {
+
+var update = function(){
+
+
+}
+$(function(obj) {
 	//We instantiate our model
 	var model = new DinnerModel();
 	var viewCache;
 
 	
-	
+	model.addObserver(this);
 
 	//And create the needed controllers and views
 	//var exampleView = new ExampleView($("#exampleView"));

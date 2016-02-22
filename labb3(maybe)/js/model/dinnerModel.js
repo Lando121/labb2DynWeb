@@ -5,11 +5,13 @@ var DinnerModel = function() {
 	// and selected dinner options for dinner menu
 	var numGuests = 2;
 	var selectedDishes = [2, 100, 200];
+	var obsArray = new Array();
 
 
 	this.setNumberOfGuests = function(num) {
 		//TODO Lab 2
 		numGuests = num;
+		notifyObservers();
 	}
 
 	// should return 
@@ -113,6 +115,7 @@ var DinnerModel = function() {
 		}
 		}
 		selectedDishes.push(id);
+		notifyObservers();
 	}
 
 	//Removes dish from menu
@@ -122,6 +125,7 @@ var DinnerModel = function() {
 				selectedDishes.splice(i, 1);
 			}
 		}
+		notifyObservers();
 		//TODO Lab 2
 	}
 
@@ -153,6 +157,17 @@ var DinnerModel = function() {
 			if(dishes[key].id == id) {
 				return dishes[key];
 			}
+		}
+	}
+
+	this.addObserver = function(observer) {
+		obsArray.push(observer);
+
+	}
+	var notifyObservers = function(obj) {
+
+		for(i=0 ; i<obsArray.length; i++){
+			obsArray[i].update(obj);
 		}
 	}
 
