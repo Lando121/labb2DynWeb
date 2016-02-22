@@ -17,6 +17,7 @@ var DinnerModel = function() {
 
 	this.setSpecificDish = function(id){
 		specificDish = id;
+		notifyObservers();
 		
 		
 	}

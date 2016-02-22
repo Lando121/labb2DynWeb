@@ -15,6 +15,9 @@ var view3Controller = function(view, model){
 
 	$(".view3_dish_col").on("click", function(){
 			model.setSpecificDish(this.getAttribute("data-internalid"));
+			$("#View3").hide();
+			$("#View4").show();
+
 	});
 	
 
