@@ -161,21 +161,11 @@ var DinnerModel = function() {
 	this.addObserver = function(observer) {
 
 		obsArray.push(observer);
-
 		
 
 	}
 	var notifyObservers = function(obj) {
-
-		for(u=0 ; u<obsArray.length; u++){
-			obsArray[u];
-			obsArray[u].update(obj);
-
-
-		for(i=0 ; i<obsArray.length; i++){
-			obsArray[i];
-			obsArray[i].update(obj);
-
+		
 		for(u=0 ; u<obsArray.length; u++){
 			obsArray[u];
 			obsArray[u].update(obj);

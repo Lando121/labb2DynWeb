@@ -27,17 +27,7 @@ var view2afterFunc = function (container,model){
 		}
 		$("#view2after_sek_paragraph").html("SEK " + totalCost);
 
-<<<<<<< Updated upstream
 	}
-=======
-<<<<<<< HEAD
-	this.update = function(obj){
-		console.log("yes");
-		$("#peopleInput").val(model.getNumberOfGuests());
-=======
-	}
->>>>>>> origin/master
->>>>>>> Stashed changes
 
 	this.update = function(obj){
 		
@@ -53,18 +43,6 @@ var view3Func = function (container,model){
 	var showing = model.getTypeDish("main dish");
 
 	model.addObserver(this);
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-		
-	for(i = 0; i<showing.length; i++){
-		$("#view3_dish_row").append("<div class='col-sm-12 col-sm-2 view3_dish_col'><div class='row view3_dish_obj'><img src='images/" + showing[i].image +  "' class='view3_dish_img'></div>" + "<div class='row view3_dish_obj view3_dish_name'>" + showing[i].name + "</div>"+"<div class='row view3_dish_info'>" + showing[i].description + "</div> </div>");
-		
-	}	
-	this.update = function(obj){
-=======
->>>>>>> origin/master
->>>>>>> Stashed changes
 
 	this.load = function(){
 		
@@ -90,24 +68,6 @@ var view4Func = function (container, model){
 	
 
 	model.addObserver(this);
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-	
-	var middleBox = container.find("#view4_recipe_middle_box");
-	var dish = model.getDishById(1).ingredients; 
-	var totalPrice = 0;
-	var numGuest = model.getNumberOfGuests();
-	for(i = 0; i < dish.length; i++){
-		totalPrice = totalPrice + dish[i].price;
-		middleBox.append('<div class="row view4_ingredient_row"><div class="col-xs-2">' + dish[i].quantity*numGuest + " " + dish[i].unit + "</div><div class='col-xs-6'>" + dish[i].name + "</div><div class='col-xs-2 right_align_par'>" + "SEK" + "</div><div class='col-xs-2 right_align_par'>" + dish[i].price*numGuest + "</div></div>");
-	
-	}
-	this.update = function(obj){
-		$("#view4_amount_of_people").val(model.getNumberOfGuests());
-=======
->>>>>>> origin/master
->>>>>>> Stashed changes
 
 	this.load = function(){
 		
@@ -160,33 +120,14 @@ var view5Func = function (container, model){
 	}
 	
 	this.update = function(obj){
-<<<<<<< Updated upstream
 		this.load();
-=======
-<<<<<<< HEAD
-
-=======
-		this.load();
->>>>>>> origin/master
->>>>>>> Stashed changes
 
 	}
 }
 
 var view6Func = function (container, model){
-<<<<<<< Updated upstream
 	container.hide();
 	
-=======
-<<<<<<< HEAD
-	model.setNumberOfGuests(6);
-
-	var menu = model.getFullMenu();
-=======
-	container.hide();
-	
->>>>>>> origin/master
->>>>>>> Stashed changes
 	model.addObserver(this);
 
 	this.load = function(){
@@ -202,13 +143,6 @@ var view6Func = function (container, model){
 	}
 	
 	
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-	this.update= function(obj){
-=======
->>>>>>> origin/master
->>>>>>> Stashed changes
 
 	
 	this.update = function(obj){
