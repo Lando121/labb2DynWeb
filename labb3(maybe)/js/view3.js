@@ -12,11 +12,11 @@ var view3Func = function (container,model){
 	
 }
 
-var update = function(){
+var update = function(obj){
 
 
 }
-$(function(obj) {
+$(function() {
 	//We instantiate our model
 	var model = new DinnerModel();
 	var viewCache;
