@@ -6,7 +6,7 @@ var view1Func = function (container){
 //$.getScript("js/view3.js");
 var view2afterFunc = function (container,model){
 
-	model.addObserver(this);
+
 //view2 screen after pending update
 	this.load = function(){
 		
@@ -42,7 +42,7 @@ var view3Func = function (container,model){
 
 	var showing = model.getTypeDish("main dish");
 
-	model.addObserver(this);
+	
 
 	this.load = function(){
 		
@@ -55,7 +55,6 @@ var view3Func = function (container,model){
 	}
 	
 	this.update = function(obj){
-		
 		this.load();
 	}
 	
@@ -67,7 +66,6 @@ var view4Func = function (container, model){
 
 	
 
-	model.addObserver(this);
 
 	this.load = function(){
 		
@@ -100,7 +98,7 @@ var view4Func = function (container, model){
 var view5Func = function (container, model){
 	container.hide();
 
-	model.addObserver(this);
+
 	this.load = function(){
 		
 		var numGuest = model.getNumberOfGuests();
@@ -127,11 +125,11 @@ var view5Func = function (container, model){
 
 var view6Func = function (container, model){
 	container.hide();
+	model.setNumberOfGuests();
 	
-	model.addObserver(this);
 
 	this.load = function(){
-		console.log("view6 Load");
+	
 		var menu = model.getFullMenu();
 	
 		$("#view6_dynamic").html("");
@@ -169,12 +167,22 @@ $(function() {
 
 	var view2after = new view2afterFunc($("#view2after"),model);
 	view2after.load();
+	model.addObserver(view2after);
+
 	var view3 = new view3Func($("#View3"),model);
 	view3.load();
+	model.addObserver(view3);
+
 	var view4 = new view4Func($("#View4"),model);
+	model.addObserver(view4);
 	view4.load();
+
 	var view5 = new view5Func($("#View5"),model);
+	model.addObserver(view5);
 	view5.load();
+
 	var view6 = new view6Func($("#View6"),model);
+	model.addObserver(view6);
 	view6.load();
+
 });
