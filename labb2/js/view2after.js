@@ -2,6 +2,8 @@
 var view2afterFunc = function (container,model){
 //view2 screen after pending update
 	var numGuest = model.getNumberOfGuests();
+	$("#peopleInput").val(numGuest);
+	console.log($("#peopleInput"));
 	console.log(model.getNumberOfGuests());
 	var menu = model.getFullMenu();
 	var totalCost = 0;
