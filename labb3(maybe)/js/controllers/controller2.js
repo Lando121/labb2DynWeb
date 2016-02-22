@@ -1,4 +1,4 @@
-var ViewController = function(view, model ) {
+var View2Controller = function(view, model ) {
  
  	$("#peopleInput").val(numGuest);
 
