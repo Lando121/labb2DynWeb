@@ -5,7 +5,7 @@ var DinnerModel = function() {
 	// and selected dinner options for dinner menu
 	var numGuests = 2;
 	var selectedDishes = [2, 100, 200];
-	var obsArray = new Array;
+	var obsArray = new Array();
 	var specificDish = 3;
 
 
@@ -183,7 +183,6 @@ var DinnerModel = function() {
 	var notifyObservers = function(obj) {
 		
 		for(u=0 ; u<obsArray.length; u++){
-			obsArray[u];
 			obsArray[u].update(obj);
 			
 		}
