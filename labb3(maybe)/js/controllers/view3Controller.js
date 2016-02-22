@@ -1,6 +1,9 @@
 
 var view3Controller = function(view, model){
 
-	alert("tjo");
+	$("#view3_dropdown_items").on("change", function(){
+
+		view.load();
+	});
 
 }
