@@ -1,6 +1,7 @@
 //$.getScript("js/view3.js");
 var view1Func = function (container){
 	
+	
 }
 $(function() {
 	//We instantiate our model

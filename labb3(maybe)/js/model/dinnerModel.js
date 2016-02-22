@@ -5,7 +5,7 @@ var DinnerModel = function() {
 	// and selected dinner options for dinner menu
 	var numGuests = 2;
 	var selectedDishes = [2, 100, 200];
-	var obsArray = new Array();
+	var obsArray = new Array;
 
 
 	this.setNumberOfGuests = function(num) {
@@ -43,8 +43,6 @@ var DinnerModel = function() {
 	}
 
 	this.getTypeDish = function(type) {
-		console.log(type);
-		console.log(dishes[1].type);
 		//TODO Lab 2
 		var typeDishes = new Array();
 		for(i = 0; i < dishes.length; i++){
@@ -161,13 +159,17 @@ var DinnerModel = function() {
 	}
 
 	this.addObserver = function(observer) {
+
 		obsArray.push(observer);
+		
 
 	}
 	var notifyObservers = function(obj) {
-
+		
 		for(i=0 ; i<obsArray.length; i++){
-			obsArray[i].update(obj);
+			obsArray[i];
+			obsArray[i].update(obs);
+			
 		}
 	}
 

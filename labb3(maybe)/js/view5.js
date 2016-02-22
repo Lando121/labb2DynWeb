@@ -4,6 +4,7 @@ var view5Func = function (container, model){
 	var numGuest = model.getNumberOfGuests();
 	var menu = model.getFullMenu();
 	var totalCost = 0;
+	model.addObserver(this);
 	for(k = 0; k<menu.length; k++){
 		console.log(menu[k].id);
 		console.log(model.getDishPrice(menu[k].id));
@@ -15,17 +16,17 @@ var view5Func = function (container, model){
 	$("#total_price").html(totalCost + " kr");
 	$("#view5_amount_people").html(model.getNumberOfGuests());
 	
-	
+	var update = function(obj){
+
+
+}
 
 
 	
 
 }
 
-var update = function(obj){
 
-
-}
 
 $(function() {
 	//We instantiate our model
@@ -33,7 +34,7 @@ $(function() {
 	var viewCache;
 
 	
-	model.addObserver(this);
+	
 
 	//And create the needed controllers and views
 	//var exampleView = new ExampleView($("#exampleView"));
