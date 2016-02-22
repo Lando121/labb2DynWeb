@@ -26,14 +26,16 @@ $(function() {
 	var view4 = new view4Func($("#View4"),model);
 	model.addObserver(view4);
 	view4.load();
-	var view4Cont = new view4Controller(view4, model);
+
 
 	var view5 = new view5Func($("#View5"),model);
 	model.addObserver(view5);
 	view5.load();
+	var view5Cont = new view5Controller(view5, model);
 
 	var view6 = new view6Func($("#View6"),model);
 	model.addObserver(view6);
 	view6.load();
+	var view6Cont = new view6Controller(view6, model);
 
 });
