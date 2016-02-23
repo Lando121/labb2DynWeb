@@ -12,8 +12,9 @@ $(function() {
 	//exampleView.totalCost.html(model.getTotalMenuPrice());
 
 	var view1 = new view1Func($("#View1"),model);
+	var view1Cont = new view1Controller(view1, model);
 
-	var view2after = new view2afterFunc($("#view2after"),model);
+	var view2after = new view2afterFunc($("#View2_after"),model);
 	view2after.load();
 	model.addObserver(view2after);
 	var view2Cont = new view2Controller(view2after, model);
