@@ -6,6 +6,9 @@ var view4Func = function (container, model){
 
 	this.load = function(){
 		var selDish = model.getSpecificDish();
+		if(selDish == null){
+			return;
+		}
 		$("#view4_dish_img").attr("src", "images/" +  selDish.image);
 		$("#view4_dish_name").html(selDish.name);
 		$("#view4_description_paragraph").html(selDish.description);
