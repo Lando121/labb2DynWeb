@@ -3,10 +3,10 @@ var DinnerModel = function() {
  
 	//TODO Lab 2 implement the data structure that will hold number of guest
 	// and selected dinner options for dinner menu
-	var numGuests = 2;
-	var selectedDishes = [2, 100, 200];
+	var numGuests = 0;
+	var selectedDishes = [];
 	var obsArray = new Array();
-	var specificDish = 3;
+	var specificDish;
 
 
 	this.setNumberOfGuests = function(num) {
@@ -125,6 +125,7 @@ var DinnerModel = function() {
 		if(dish.type==this.getDishById(selectedDishes[j]).type){
 			delete selectedDishes[j];
 			selectedDishes[j] = id;
+			notifyObservers();
 			return;
 		}
 		}
