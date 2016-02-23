@@ -1,10 +1,18 @@
 var view2afterFunc = function (container,model){
 
-
+	container.hide();
 //view2 screen after pending update
 	this.load = function(){
-		
+		console.log(model.getFullMenu().length);
 		var numGuest = model.getNumberOfGuests();
+		if(model.getSpecificDish() == null){
+
+			$("#view2_specific_dish").html("0,00");
+		} else {
+			$("#view2_specific_dish").html(model.getDishPrice(model.getSpecificDish().id) * numGuest);
+		}
+		
+		
 		$("#peopleInput").val(numGuest);	
 		var menu = model.getFullMenu();
 		var totalCost = 0;
