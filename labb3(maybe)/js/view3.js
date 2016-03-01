@@ -8,6 +8,7 @@ var view3Func = function (container,model){
 		if(obj != null){
 
 			if(obj.Results != null){
+				
 				$("#view3_dish_row").html("");
 		
 				for(i = 0; i<obj.Results.length; i++){
