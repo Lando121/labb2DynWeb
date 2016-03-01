@@ -17,10 +17,11 @@ var view3Func = function (container,model){
 				if(i % 3== 2){
 					$("#view3_dish_row").append("<div class='row'>");
 				}
-		}
+			}
 		
 		
 
+		}
 	}
 	
 	this.update = function(obj){
