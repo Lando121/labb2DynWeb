@@ -7,8 +7,8 @@ var view3Func = function (container,model){
 	this.load = function(obj){
 		if(obj != null){
 
-			
-			console.log(obj);
+			if(obj.Results != null){
+						console.log(obj);
 		
 			$("#view3_dish_row").html("");
 	
@@ -18,6 +18,9 @@ var view3Func = function (container,model){
 					$("#view3_dish_row").append("<div class='row'>");
 				}
 			}
+
+			}
+		
 		
 		
 

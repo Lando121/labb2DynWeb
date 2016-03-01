@@ -12,12 +12,12 @@ var DinnerModel = function() {
 	this.setNumberOfGuests = function(num) {
 		//TODO Lab 2
 		numGuests = num;
-		notifyObservers();
+		this.notifyObservers();
 	}
 
 	this.setSpecificDish = function(obj){
 		specificDish = obj;
-		notifyObservers();
+		this.notifyObservers();
 		
 		
 	}
@@ -120,12 +120,12 @@ var DinnerModel = function() {
 		if(obj.Category==selectedDishes[j].Category){
 			delete selectedDishes[j];
 			selectedDishes[j] = obj;
-			notifyObservers();
+			this.notifyObservers();
 			return;
 		}
 		}
 		selectedDishes.push(obj);
-		notifyObservers();
+		this.notifyObservers();
 	}
 
 	//Removes dish from menu
@@ -135,32 +135,15 @@ var DinnerModel = function() {
 				selectedDishes.splice(i, 1);
 			}
 		}
-		notifyObservers();
+		this.notifyObservers();
 		//TODO Lab 2
 	}
+
 
 	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
 	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
 	//if you don't pass any filter all the dishes will be returned
-	this.getAllDishes = function (type,filter) {
-
-            var apiKey = "H9n1zb6es492fj87OxDtZM9s5sb29rW3";
-
-            var url = "http://api.bigoven.com/recipes?pg=1&rpp=25&any_kw="
-                  + type 
-                  + "&api_key="+apiKey;
-            $.ajax({
-                    type: "GET",
-                    dataType: 'json',
-                    cache: false,
-                    url: url,
-                    success: function (data) {
-                    notifyObservers(data);
-                    //console.log(data);
-                    }
-                });
-        
-	}
+	
 
 	//function that returns a dish of specific ID
 	this.getDish = function (callback, id) {
@@ -186,12 +169,29 @@ var DinnerModel = function() {
 		
 
 	}
-	var notifyObservers = function(obj) {
+	this.notifyObservers = function(obj) {
 		
 		for(u=0 ; u<obsArray.length; u++){
 			obsArray[u].update(obj);
 			
 		}
+	}
+	var self = this;
+	this.getAllDishes = function (type,filter) {
+
+            var apiKey = "H9n1zb6es492fj87OxDtZM9s5sb29rW3";
+
+            var url = "http://api.bigoven.com/recipes?pg=1&rpp=25&any_kw="
+                  + type 
+                  + "&api_key="+apiKey;
+            $.ajax({
+                    type: "GET",
+                    dataType: 'json',
+                    cache: false,
+                    url: url,
+                    success: self.notifyObservers
+                });
+        
 	}
 
 
