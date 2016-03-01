@@ -148,22 +148,23 @@ var DinnerModel = function() {
 	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
 	//if you don't pass any filter all the dishes will be returned
 	this.getAllDishes = function (type,filter) {
-	  return $(dishes).filter(function(index,dish) {
-		var found = true;
-		if(filter){
-			found = false;
-			$.each(dish.ingredients,function(index,ingredient) {
-				if(ingredient.name.indexOf(filter)!=-1) {
-					found = true;
-				}
-			});
-			if(dish.name.indexOf(filter) != -1)
-			{
-				found = true;
-			}
-		}
-	  	return dish.type == type && found;
-	  });	
+
+            var apiKey = "1hg3g4Dkwr6pSt22n00EfS01rz568IR6";
+
+            var url = "http://api.bigoven.com/recipes?pg=1&rpp=25&title_kw="
+                  + type 
+                  + "&api_key="+apiKey;
+            $.ajax({
+                    type: "GET",
+                    dataType: 'json',
+                    cache: false,
+                    url: url,
+                    success: function (data) {
+                    notifyObservers(data);
+                    //console.log(data);
+                    }
+                });
+        
 	}
 
 	//function that returns a dish of specific ID
