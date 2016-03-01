@@ -149,9 +149,9 @@ var DinnerModel = function() {
 	//if you don't pass any filter all the dishes will be returned
 	this.getAllDishes = function (type,filter) {
 
-            var apiKey = "1hg3g4Dkwr6pSt22n00EfS01rz568IR6";
+            var apiKey = "8vtk7KykflO5IzB96kb0mpot0sU40096";
 
-            var url = "http://api.bigoven.com/recipes?pg=1&rpp=25&title_kw="
+            var url = "http://api.bigoven.com/recipes?pg=1&rpp=25&any_kw="
                   + type 
                   + "&api_key="+apiKey;
             $.ajax({
