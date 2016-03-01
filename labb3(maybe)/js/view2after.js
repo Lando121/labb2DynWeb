@@ -15,14 +15,6 @@ var view2afterFunc = function (container,model){
 		}
 		
 		
-		$("#peopleInput").val(numGuest);	
-		var menu = model.getFullMenu();
-		var totalCost = 0;
-		
-		$("#view2after").html("");
-		for(m = 0; m<menu.length; m++){
-
-			
 			$("#peopleInput").val(numGuest);	
 			var menu = model.getFullMenu();
 			var totalCost = 0;
