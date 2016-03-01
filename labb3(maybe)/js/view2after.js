@@ -15,10 +15,14 @@ var view2afterFunc = function (container,model){
 		}
 		
 		
-			$("#peopleInput").val(numGuest);	
-			var menu = model.getFullMenu();
-			var totalCost = 0;
-			
+
+		$("#peopleInput").val(numGuest);	
+		var menu = model.getFullMenu();
+		var totalCost = 0;
+		
+		$("#view2after").html("");
+		for(m = 0; m<menu.length; m++){
+
 			$("#view2after").html("");
 			
 		
@@ -43,6 +47,6 @@ var view2afterFunc = function (container,model){
 			this.load(obj);
 		}
 	
-		
+}		
 
 }
