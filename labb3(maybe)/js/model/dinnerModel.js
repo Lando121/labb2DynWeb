@@ -104,7 +104,7 @@ var DinnerModel = function() {
 		//TODO Lab 2
 		var totalCost = 0;
 		for(i = 0; i < selectedDishes.length; i++){
-			totalCost = totalCost + (this.getNumberOfGuests() * this.getDishPrice(selectedDishes[i]);
+			totalCost = totalCost + (this.getNumberOfGuests() * this.getDishPrice(selectedDishes[i]));
 			
 		}
 		return totalCost;
