@@ -9,7 +9,8 @@ var view2afterFunc = function (container,model){
 
 			$("#view2_specific_dish").html("0,00");
 		} else {
-			$("#view2_specific_dish").html(model.getDishPrice(model.getSpecificDish().id) * numGuest);
+			
+			$("#view2_specific_dish").html(model.getDishPrice(model.getSpecificDish()) * numGuest);
 		}
 		
 		

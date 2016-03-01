@@ -3,7 +3,7 @@ var DinnerModel = function() {
  
 	//TODO Lab 2 implement the data structure that will hold number of guest
 	// and selected dinner options for dinner menu
-	var numGuests = 0;
+	var numGuests = 1;
 	var selectedDishes = [];
 	var obsArray = new Array();
 	var specificDish;
@@ -148,7 +148,6 @@ var DinnerModel = function() {
 	//function that returns a dish of specific ID
 	this.getDish = function (callback, id) {
 
-		console.log(id);
 
 	   var apiKey = "H9n1zb6es492fj87OxDtZM9s5sb29rW3";
         var url = "http://api.bigoven.com/recipe/"  + id + "?api_key=" + apiKey;
