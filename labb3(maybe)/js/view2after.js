@@ -8,11 +8,20 @@ var view2afterFunc = function (container,model){
 			var numGuest = model.getNumberOfGuests();
 			if(model.getSpecificDish() == null){
 
-				$("#view2_specific_dish").html("0,00");
-			} else {
-				$("#view2_specific_dish").html(model.getDishPrice(model.getSpecificDish().id) * numGuest);
-			}
+			$("#view2_specific_dish").html("0,00");
+		} else {
 			
+			$("#view2_specific_dish").html(model.getDishPrice(model.getSpecificDish()) * numGuest);
+		}
+		
+		
+		$("#peopleInput").val(numGuest);	
+		var menu = model.getFullMenu();
+		var totalCost = 0;
+		
+		$("#view2after").html("");
+		for(m = 0; m<menu.length; m++){
+
 			
 			$("#peopleInput").val(numGuest);	
 			var menu = model.getFullMenu();

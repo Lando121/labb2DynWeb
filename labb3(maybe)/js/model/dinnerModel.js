@@ -148,7 +148,6 @@ var DinnerModel = function() {
 	//function that returns a dish of specific ID
 	this.getDish = function (callback, id) {
 
-		console.log(id);
 
 	   var apiKey = "H9n1zb6es492fj87OxDtZM9s5sb29rW3";
         var url = "http://api.bigoven.com/recipe/"  + id + "?api_key=" + apiKey;
