@@ -168,12 +168,19 @@ var DinnerModel = function() {
 	}
 
 	//function that returns a dish of specific ID
-	this.getDish = function (id) {
-	  for(key in dishes){
-			if(dishes[key].id == id) {
-				return dishes[key];
-			}
-		}
+	this.getDish = function (callback, id) {
+	   var apiKey = "8vtk7KykflO5IzB96kb0mpot0sU40096";
+        var url = "http://api.bigoven.com/recipe/"  + id + "?api_key=" + apiKey;
+        $.ajax({
+            type: "GET",
+            dataType: 'json',
+            cache: false,
+            url: url,
+            success:callback
+                //console.log(data);
+             
+           
+        });
 	}
 
 	this.addObserver = function(observer) {
