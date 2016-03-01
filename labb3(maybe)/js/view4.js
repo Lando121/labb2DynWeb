@@ -28,6 +28,14 @@ var view4Func = function (container, model){
 		$("#view4_total_cost").html(totalPrice*numGuest);
 
 	}
+
+	this.reset = function(){
+		$("#view4_dish_img").attr("src", "");
+		$("#view4_dish_name").html("");
+		$("#view4_description_paragraph").html("");
+		$("#view4_preparation_paragraph").html("");
+		$("#view4_amount_of_people").html("");
+	}
 	
 	this.update = function(obj){
 

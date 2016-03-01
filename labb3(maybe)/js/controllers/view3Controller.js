@@ -15,7 +15,7 @@ var view3Controller = function(view, model){
 
 	$("body").delegate(".view3_dish_col","click", function(){
 
-			model.getDish(function(data){ model.notifyObservers(data); model.setSpecificDish(data);},this.getAttribute("dishID"));
+			model.getDish(function(data){ model.setSpecificDish(data); model.notifyObservers(data); },this.getAttribute("dishID"));
 			$("#View3").hide();
 			$("#View4").show();
 
