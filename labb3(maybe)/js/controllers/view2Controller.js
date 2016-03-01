@@ -16,7 +16,7 @@ var view2Controller = function(view, model) {
     	
 		});
 
- 	$("#View2_after").delegate(".view2_menuItem","click",function(){
+ 	/**$("#View2_after").delegate(".view2_menuItem","click",function(){
  			console.log("dad");
  			model.setSpecificDish(this.getAttribute("dishID"));
 			$("#View3").hide();
@@ -28,7 +28,7 @@ var view2Controller = function(view, model) {
 		
 					
 
- 	});
+ 	});**/
 
 
 }

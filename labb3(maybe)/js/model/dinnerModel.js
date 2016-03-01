@@ -141,7 +141,7 @@ var DinnerModel = function() {
 	//if you don't pass any filter all the dishes will be returned
 	this.getAllDishes = function (type,filter) {
 
-            var apiKey = "r02x0R09O76JMCMc4nuM0PJXawUHpBUL";
+            var apiKey = "H9n1zb6es492fj87OxDtZM9s5sb29rW3";
 
             var url = "http://api.bigoven.com/recipes?pg=1&rpp=25&any_kw="
                   + type 
@@ -162,7 +162,7 @@ var DinnerModel = function() {
 	//function that returns a dish of specific ID
 
 	this.getDish = function (callback, id) {
-	   var apiKey = "r02x0R09O76JMCMc4nuM0PJXawUHpBUL";
+	   var apiKey = "H9n1zb6es492fj87OxDtZM9s5sb29rW3";
         var url = "http://api.bigoven.com/recipe/"  + id + "?api_key=" + apiKey;
         $.ajax({
             type: "GET",
