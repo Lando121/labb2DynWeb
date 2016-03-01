@@ -15,8 +15,8 @@ var DinnerModel = function() {
 		notifyObservers();
 	}
 
-	this.setSpecificDish = function(id){
-		specificDish = id;
+	this.setSpecificDish = function(obj){
+		specificDish = obj;
 		notifyObservers();
 		
 		
@@ -26,7 +26,7 @@ var DinnerModel = function() {
 		if(specificDish == null){
 			return null;
 		}
-		return this.getDishById(specificDish);
+		return specificDish;
 	}
 
 
@@ -36,7 +36,7 @@ var DinnerModel = function() {
 		return numGuests;
 	}
 
-	this.getDishById = function(id) {
+	/**this.getDishById = function(id) {
 		
 		for(i = 0; i < dishes.length; i++){	
 			if(id==dishes[i].id) {
@@ -45,9 +45,10 @@ var DinnerModel = function() {
 		}
 	
 	}
+	**/
 
 	//Returns the dish that is on the menu for selected type 
-	this.getSelectedDish = function(type) {
+	this.getSelectedDish = function() {
 		//TODO Lab 2
 		for(i = 0; i < selectedDishes.length; i++){
 			if(this.getDishById(selectedDishes[i]).type == type){
@@ -169,7 +170,7 @@ var DinnerModel = function() {
 
 	//function that returns a dish of specific ID
 
-	this.getDish = function (callback, id) {
+	this.getDish = function (callback,id) {
 	   var apiKey = "8vtk7KykflO5IzB96kb0mpot0sU40096";
         var url = "http://api.bigoven.com/recipe/"  + id + "?api_key=" + apiKey;
         $.ajax({
@@ -178,8 +179,7 @@ var DinnerModel = function() {
             cache: false,
             url: url,
             success:callback
-                //console.log(data);
-             
+                         
            
         });
 	}
