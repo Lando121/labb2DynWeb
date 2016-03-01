@@ -15,8 +15,8 @@ var DinnerModel = function() {
 		notifyObservers();
 	}
 
-	this.setSpecificDish = function(id){
-		specificDish = id;
+	this.setSpecificDish = function(obj){
+		specificDish = obj;
 		notifyObservers();
 		
 		
@@ -26,7 +26,7 @@ var DinnerModel = function() {
 		if(specificDish == null){
 			return null;
 		}
-		return this.getDishById(specificDish);
+		return specificDish;
 	}
 
 
@@ -36,7 +36,7 @@ var DinnerModel = function() {
 		return numGuests;
 	}
 
-	this.getDishById = function(id) {
+	/**this.getDishById = function(id) {
 		
 		for(i = 0; i < dishes.length; i++){	
 			if(id==dishes[i].id) {
@@ -44,21 +44,21 @@ var DinnerModel = function() {
 			}
 		}
 	
-	}
+	}**/
 
 	//Returns the dish that is on the menu for selected type 
 	this.getSelectedDish = function(type) {
 		//TODO Lab 2
 		for(i = 0; i < selectedDishes.length; i++){
-			if(this.getDishById(selectedDishes[i]).type == type){
-				return this.getDishById(selectedDishes[i]);
+			if(selectedDishes[i].Category == Category){
+				return selectedDishes[i];
 			} else {
 				console.log("no dish choosed for that type");
 			}
 		}
 	}
 
-	this.getTypeDish = function(type) {
+	/**this.getTypeDish = function(type) {
 		//TODO Lab 2
 		var typeDishes = new Array();
 		for(i = 0; i < dishes.length; i++){
@@ -67,19 +67,15 @@ var DinnerModel = function() {
 			}
 		}
 		return typeDishes;
-	}
+	}**/
 
-	this.getSelectedDishIds = function(){
+	/**this.getSelectedDishIds = function(){
 		return selectedDishes;
-	}
+	}**/
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
 		//TODO Lab 2
-		var fullMenu = new Array();
-		for(k = 0; k < selectedDishes.length ; k++){
-			fullMenu.push(this.getDishById(selectedDishes[k]));
-		}
-		return fullMenu;
+		return selectedDishes;
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
@@ -87,16 +83,15 @@ var DinnerModel = function() {
 		//TODO Lab 2 PSEUDO!!
 		var ingredientsList = new Array();
 		for(i = 0; i < selectedDishes.length; i++){
-			ingredientsList.push(this.getDishById(selectedDishes[i]).ingredients);
+			ingredientsList.push(selectedDishes[i].Ingredients);
 		}
 		return ingredientsList;
 	}
 
-	this.getDishPrice = function(id){
+	this.getDishPrice = function(obj){
 		var cost = 0;
-		var dish = this.getDishById(id);
-		for(i=0; i<dish.ingredients.length;i++){
-			cost = cost+dish.ingredients[i].price;
+		for(i=0; i<obj.Ingredients.length;i++){
+			cost = cost+obj.Ingredients[i].Quantity;
 		}
 		return cost;
 	}
@@ -106,10 +101,7 @@ var DinnerModel = function() {
 		//TODO Lab 2
 		var totalCost = 0;
 		for(i = 0; i < selectedDishes.length; i++){
-			var currentDish = this.getDishById(selectedDishes[i]);
-			for(j = 0; j < currentDish.ingredients.length; j++){
-				totalCost = totalCost + (this.getNumberOfGuests() * currentDish.ingredients[j].price);
-			}
+			totalCost = totalCost + (this.getNumberOfGuests() * this.getDishPrice(selectedDishes[i]);
 			
 		}
 		return totalCost;
@@ -118,25 +110,25 @@ var DinnerModel = function() {
 	
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
-	this.addDishToMenu = function(id) {
+	this.addDishToMenu = function(obj) {
 		//TODO Lab 2 
-	var dish = this.getDishById(id);
+	//var dish = this.getDishById(id);
 	for( j= 0; j < selectedDishes.length; j++){
-		if(dish.type==this.getDishById(selectedDishes[j]).type){
+		if(obj.Category==selectedDishes[j].Category){
 			delete selectedDishes[j];
-			selectedDishes[j] = id;
+			selectedDishes[j] = obj;
 			notifyObservers();
 			return;
 		}
 		}
-		selectedDishes.push(id);
+		selectedDishes.push(obj);
 		notifyObservers();
 	}
 
 	//Removes dish from menu
-	this.removeDishFromMenu = function(id) {
+	this.removeDishFromMenu = function(obj) {
 		for(i = 0; i < selectedDishes.length; i++){
-			if(selectedDishes[i] == id){
+			if(selectedDishes[i] == obj){
 				selectedDishes.splice(i, 1);
 			}
 		}
@@ -149,7 +141,7 @@ var DinnerModel = function() {
 	//if you don't pass any filter all the dishes will be returned
 	this.getAllDishes = function (type,filter) {
 
-            var apiKey = "8vtk7KykflO5IzB96kb0mpot0sU40096";
+            var apiKey = "r02x0R09O76JMCMc4nuM0PJXawUHpBUL";
 
             var url = "http://api.bigoven.com/recipes?pg=1&rpp=25&any_kw="
                   + type 
@@ -170,7 +162,7 @@ var DinnerModel = function() {
 	//function that returns a dish of specific ID
 
 	this.getDish = function (callback, id) {
-	   var apiKey = "8vtk7KykflO5IzB96kb0mpot0sU40096";
+	   var apiKey = "r02x0R09O76JMCMc4nuM0PJXawUHpBUL";
         var url = "http://api.bigoven.com/recipe/"  + id + "?api_key=" + apiKey;
         $.ajax({
             type: "GET",

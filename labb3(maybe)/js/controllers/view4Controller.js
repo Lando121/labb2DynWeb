@@ -12,7 +12,7 @@ var view4Controller = function(view, model){
 	});
 
 	$("#View4").delegate("#view4_confirm_dish_button","click", function(){
-		model.addDishToMenu(model.getSpecificDish().id);	
+		model.addDishToMenu(model.getSpecificDish());	
 
 	});
 	
