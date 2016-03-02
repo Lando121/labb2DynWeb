@@ -25,8 +25,12 @@ var view3Controller = function(view, model){
 		spinnerInit();
 
 			model.getDish(function(data){ 
-				model.setSpecificDish(data); model.notifyObservers(data);$('.spinner').remove(); $("#View3").hide();$("#View4").show();
-		}
+							model.setSpecificDish(data); 
+							model.notifyObservers(data);
+							$('.spinner').remove(); 
+							$("#View3").hide();
+							$("#View4").show();
+						}
 				,this.getAttribute("dishID"), "view3");
 			
 
