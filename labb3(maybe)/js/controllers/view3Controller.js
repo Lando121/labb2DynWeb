@@ -8,7 +8,9 @@ var view3Controller = function(view, model){
 
 
 	$("#view3_search_button").on("click", function(){
-		model.getAllDishes($("#view3_search_text_field").val().toLowerCase().trim(),$("#view3_dropdown_items option:selected").text());	
+		$("#view3_dish_row").hide();
+		
+		model.getAllDishes(function(data){model.notifyObservers(data), $("#view3_dish_row").show();},$("#view3_search_text_field").val().toLowerCase().trim(),$("#view3_dropdown_items option:selected").text());	
 	});
 
 

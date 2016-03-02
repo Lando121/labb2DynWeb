@@ -4,7 +4,6 @@ var view2afterFunc = function (container,model){
 //view2 screen after pending update
 	this.load = function(obj){
 	
-			console.log(model.getFullMenu().length);
 			var numGuest = model.getNumberOfGuests();
 			if(model.getSpecificDish() == null){
 
@@ -27,7 +26,6 @@ var view2afterFunc = function (container,model){
 			
 		
 			for(m = 0; m<menu.length; m++){
-				console.log(menu);
 				
 				totalPrice = model.getDishPrice(menu[m])*numGuest;
 				totalCost = totalCost + totalPrice;

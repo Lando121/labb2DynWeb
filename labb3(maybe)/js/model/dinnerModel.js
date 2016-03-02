@@ -114,6 +114,7 @@ var DinnerModel = function() {
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(obj) {
+
 		//TODO Lab 2 
 	//var dish = this.getDishById(id);
 	for( j= 0; j < selectedDishes.length; j++){
@@ -169,18 +170,17 @@ var DinnerModel = function() {
 
 	}
 	this.notifyObservers = function(obj) {
-		console.log(obj);
 		for(u=0 ; u<obsArray.length; u++){
 			obsArray[u].update(obj);
 			
 		}
 	}
 	var self = this;
-	this.getAllDishes = function (type,filter) {
+	this.getAllDishes = function (callback, type,filter) {
 
             var apiKey = "H9n1zb6es492fj87OxDtZM9s5sb29rW3";
 
-            var url = "http://api.bigoven.com/recipes?pg=1&rpp=25&any_kw="
+            var url = "http://api.bigoven.com/recipes?pg=1&rpp=100&any_kw="
                   + type 
                   + "&api_key="+apiKey;
             $.ajax({
@@ -188,7 +188,7 @@ var DinnerModel = function() {
                     dataType: 'json',
                     cache: false,
                     url: url,
-                    success: self.notifyObservers
+                    success: callback
                 });
         
 	}
