@@ -17,7 +17,7 @@ var DinnerModel = function() {
 
 	this.setSpecificDish = function(obj){
 		specificDish = obj;
-		//this.notifyObservers(obj);
+		this.notifyObservers(obj);
 		
 		
 	}
