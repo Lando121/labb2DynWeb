@@ -16,7 +16,7 @@ var view3Controller = function(view, model){
 		
 		model.getAllDishes(function(data){
 			model.notifyObservers(data); $('.spinner').remove(); $("#view3_dish_row").show();}
-			,$("#view3_search_text_field").val().toLowerCase().trim(),$("#view3_dropdown_items option:selected").text());	
+			,$("#view3_search_text_field").val().toLowerCase().trim(),$("#view3_dropdown_items option:selected").text(), "view3");	
 	});
 
 
