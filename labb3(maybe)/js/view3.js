@@ -26,8 +26,33 @@ var view3Func = function (container,model){
 
 		}
 	}
+
+	this.errorMess = function(obj, view, exception){
+		if(view == "view3"){
+			if (obj === 0) {
+                alert('Could not connect.\n Verify Network.');
+            } else if (obj == 404) {
+                alert('Requested page not found. [404]');
+            } else if (obj == 500) {
+                alert('Internal Server Error [500].');
+            } else if (exception === 'parsererror') {
+                alert('Requested JSON parse failed.');
+            } else if (exception === 'timeout') {
+                alert('Time out error.');
+            } else if (exception === 'abort') {
+                alert('Ajax request aborted.');
+            } else {
+                alert('Uncaught Error.\n' + jqXHR.responseText);
+            }
+		}
+		
+	}
 	
-	this.update = function(obj){
+	this.update = function(obj, view, exception){
+		if(exception){
+			this.errorMess(obj.status, view, exception);
+			return;
+		}
 		this.load(obj);
 	}
 	

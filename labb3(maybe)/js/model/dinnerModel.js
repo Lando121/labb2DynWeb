@@ -147,7 +147,7 @@ var DinnerModel = function() {
 	
 
 	//function that returns a dish of specific ID
-	this.getDish = function (callback, id) {
+	this.getDish = function (callback, id, view) {
 
 
 	   var apiKey = "H9n1zb6es492fj87OxDtZM9s5sb29rW3";
@@ -157,7 +157,11 @@ var DinnerModel = function() {
             dataType: 'json',
             cache: false,
             url: url,
-            success:callback
+            success:callback,
+            error: function(data, exception){
+          				
+                    	self.notifyObservers(data, view, exception);
+                    }
                          
            
         });
@@ -169,14 +173,14 @@ var DinnerModel = function() {
 		
 
 	}
-	this.notifyObservers = function(obj) {
+	this.notifyObservers = function(obj, view, exception) {
 		for(u=0 ; u<obsArray.length; u++){
-			obsArray[u].update(obj);
+			obsArray[u].update(obj, view, exception);
 			
 		}
 	}
 	var self = this;
-	this.getAllDishes = function (callback, type,filter) {
+	this.getAllDishes = function (callback, type, filter, view) {
 
             var apiKey = "H9n1zb6es492fj87OxDtZM9s5sb29rW3";
 
@@ -188,7 +192,10 @@ var DinnerModel = function() {
                     dataType: 'json',
                     cache: false,
                     url: url,
-                    success: callback
+                    success: callback,
+                    error: function(data, exception){
+                    	self.notifyObservers(data, view, exception);
+                    }
                 });
         
 	}
