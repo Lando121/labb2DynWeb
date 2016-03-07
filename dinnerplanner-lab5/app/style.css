@@ -333,7 +333,7 @@ hr {
   	width:100%;
   }
 }
-#view56_subHeading button{
+#confirmButtonFix{
 	margin-top:0;
 	margin-bottom:0;
 	background-color:#EB963B;
@@ -345,7 +345,7 @@ hr {
 }
 
 @media (max-width: 750px) {
-  #view56_subHeading button{
+  #confirmButtonFix{
   	width:100%;
   }
 }
@@ -388,7 +388,7 @@ hr {
 	text-align:center;
 }
 
-#view5_printRecipe{
+#buttonPrint{
 	
 	background-color:#EB963B;
 	border: solid 1px black;
@@ -397,14 +397,14 @@ hr {
 }
 
 @media (min-width: 750px) {
-  #view5_printRecipe{
+  #buttonPrint{
   	width:25%;
   	left:37%;
   }
 }
 
 @media (max-width: 750px) {
-  #view5_printRecipe{
+  #buttonPrint{
   	width:50%;
   	left:25%;
   }
