@@ -333,17 +333,19 @@ hr {
   	width:100%;
   }
 }
-#confirmButtonFix{
-
-
+#goBack{
+	margin-top:0;
+	margin-bottom:0;
 	background-color:#EB963B;
 	border: solid 2px black;
+	float:right;
+	width:15%;
 	
 
 }
 
 @media (max-width: 750px) {
-  #confirmButtonFix{
+  #goBack{
   	width:100%;
   }
 }

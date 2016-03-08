@@ -1,17 +1,17 @@
 <!-- TODO in Lab 5: Display the items on the menu with cost for each -->
- <div class="col-xs-12 col-sm-2">
+  <div id="View2_after" class="col-xs-12 col-sm-2">
           <div class="row">
-            <h2 id="view2_heading" class="subHeading col-xs-12"> My Dinner </h2>
+            <h2 id="view2_heading"class="subHeading col-xs-12"> My Dinner </h2>
           </div>
           <div class="row">
-           People: <input type="number" ng-model="numberOfGuests" ng-change="setNumberOfGuest(numberOfGuests)"/>
+            <p class="col-xs-12 col-sm-3 basic_view2_paragraph left_align_par">People</p>
+            <input class="col-xs-12 col-sm-9" id="peopleInput" ng-model="numberOfGuests" ng-change="setNumberOfGuest(numberOfGuests)" type="number" ></input>
           </div>
-        <div class="row"><!-- update maträtt totalcost --> 
-			<div id="grey_row_view2" class="row">
+          <div id="grey_row_view2" class="row">
             <p class="col-xs-6 left_align_par">Dish Name</p>
             <p class="col-xs-6 right_align_par">Cost</p>    
           </div>
-        <div class="row"><!-- update maträtt totalcost --> 
+          <div class="row"><!-- update maträtt totalcost --> 
             <div class="col-xs-12" id="view2after">
             
     <!--p class="col-xs-6 left_align_par orange_paragraph_view2" id="view2after_name"></p>
@@ -20,33 +20,21 @@
           </div>
 
           <div class="row"> 
-            <div class="col-xs-6"><span class="left_align_par orange_paragraph_view2" >Pending</span></div>
-            <div class="col-xs-6"><span id="view2_specific_dish" class="right_align_par orange_paragraph_view2"> 0.00</span></div>
+            <p class="col-xs-6 left_align_par orange_paragraph_view2" >Pending</p>
+            <p id="view2_specific_dish" class="col-xs-6 right_align_par orange_paragraph_view2"> 0.00</p>
           </div>
-          <div id="view2_border_element" class="row">
+          <div id="view2_border_element"class="row">
           </div>
           <div class="row">
-          	<div class="col-xs-12">
-           		<p id="view2after_sek_paragraph" class="right_align_par orange_paragraph_view2">SEK 0.00</p>
-            </div>
+            <p id="view2after_sek_paragraph"class="col-xs-12 right_align_par orange_paragraph_view2">SEK 0.00</p>
           </div>
-           <div class="row">
-           	<div class="col-xs-12">
-            	<a href="#/overview" class="btn btn btn-default" id="confirmButtonFix"> Confirm Dinner</a>
-          	</div>
+          <div class="row">
+         	 <a href="#/overview" class="col-xs-12 btn btn-default" id="confirmButton">Confirm Dinner</a>
           </div>
+            Total number of guest: {{getNumberOfGuests()}}
         </div>
-          Total number of guest: {{getNumberOfGuests()}}
-  </div>
 
 
-
-
-
-
-
-
-           
             
 
 <!-- Displaying number of guests both in input box and here is redundant. It is here only for the example
