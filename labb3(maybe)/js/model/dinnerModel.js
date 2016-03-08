@@ -150,7 +150,7 @@ var DinnerModel = function() {
 	this.getDish = function (callback, id, view) {
 
 
-	   var apiKey = "H9n1zb6es492fj87OxDtZM9s5sb29rW3";
+	   var apiKey = "66J8l00npnHHZcCNLRhxkfW1OHxbojy4";
         var url = "http://api.bigoven.com/recipe/"  + id + "?api_key=" + apiKey;
         $.ajax({
             type: "GET",
@@ -182,7 +182,7 @@ var DinnerModel = function() {
 	var self = this;
 	this.getAllDishes = function (callback, type, filter, view) {
 
-            var apiKey = "H9n1zb6es492fj87OxDtZM9s5sb29rW3";
+            var apiKey = "66J8l00npnHHZcCNLRhxkfW1OHxbojy4";
 
             var url = "http://api.bigoven.com/recipes?pg=1&rpp=100&any_kw="
                   + type 

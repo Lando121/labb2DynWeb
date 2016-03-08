@@ -1,7 +1,8 @@
 <!-- vi måste fixa detta själva-->
+<ng-include ng-controller="DinnerCtrl"></ng-include>
 <div class="row">
             <div class="col-xs-12" id="view56_subHeading">
-              <h2 class="col-xs-12 col-sm-6"> My Dinner: <b id="view5_amount_people"></b> people </h2>
+              <h2 class="col-xs-12 col-sm-6"> My Dinner: <b id="view5_amount_people"> {{getNumberOfGuests()}} </b> people </h2>
               <a href="#/search" class="col-xs-12 col-sm-6 btn btn-default" id="goBack">Go back and edit dinner</a>
             </div>
           </div>
@@ -11,7 +12,8 @@
             </div>
             <div class="col-xs-1" id="test2">
               <p> Total:</p>
-              <p id="total_price">  </p>
+              <p id="total_price"> {{getTotalMenuPrice()}}  </p>
+           
 
             </div>
           </div>
