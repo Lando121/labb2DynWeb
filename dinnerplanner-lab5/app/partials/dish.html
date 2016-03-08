@@ -13,7 +13,7 @@
               <p id="view4_description_paragraph">{{dish.Description}}</p>
             </div>
             <div class="row" id="view4_back_to_dish_button_row">
-              <a class="col-xs-12 btn btn-default" href="#/search" id="back_to_select_dish_button" type="button" >back to Select Dish</a>
+              <a class="col-xs-12 btn btn-default" ng-click="setSpecificDish(null)"href="#/search" id="back_to_select_dish_button" type="button" >back to Select Dish</a>
             </div>
             <div class="row" id="view4_preparation_title_row">
               <h1>PREPARATION</h1>
@@ -31,7 +31,14 @@
 
               </div>
             </div>
-            <div id="view4_recipe_middle_box">
+            <div id="view4_recipe_middle_box" >
+            	<div class="row view4_ingredient_row" ng-repeat="ingredient in dish.Ingredients">
+            		<div class="col-xs-2"> {{ingredient.Quantity}} &nbsp; {{ingredient.Unit}}</div>
+            		<div class="col-xs-6"> {{ingredient.Name}} </div>
+            		<div class="col-xs-2"> SEK</div>
+            		<div class="col-xs-2"> {{ingredient.Quantity}} </div>
+            	</div>
+
             </div>
           
           <div class="row" id="view4_confirm_dish_row">

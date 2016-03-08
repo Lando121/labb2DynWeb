@@ -11,8 +11,13 @@ dinnerPlannerApp.controller('DishCtrl', function ($scope,$routeParams,Dinner) {
 	$scope.getNumberOfGuests = function() {
     return Dinner.getNumberOfGuests();
   }
+  $scope.setSpecificDish = function(obj) {
+    return Dinner.setSpecificDish(obj);
+  }
+
   
   	$scope.getSpecificPrice = function() {
+  	
  
   		return Dinner.getDishPrice($scope.dish);
   	}

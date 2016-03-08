@@ -119,8 +119,7 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
     var totalCost = 0;
 
     for(k = 0; k < selectedDishes.length; k++){
-      console.log(k);
-      console.log(selectedDishes[k]);
+      
 
       totalCost = totalCost + (this.getNumberOfGuests() * this.getDishPrice(selectedDishes[k]));
       
@@ -165,9 +164,9 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
   
 
   //function that returns a dish of specific ID
-this.DishSearch = $resource('http://api.bigoven.com/recipes',{pg:1,rpp:25,api_key:'0OV23011kU7B3VVVgxTTTIfdNXeTI3us'});
+this.DishSearch = $resource('http://api.bigoven.com/recipes',{pg:1,rpp:25,api_key:'r02x0R09O76JMCMc4nuM0PJXawUHpBUL'});
 
-this.Dish = $resource('http://api.bigoven.com/recipe/:id',{api_key:'0OV23011kU7B3VVVgxTTTIfdNXeTI3us'}); 
+this.Dish = $resource('http://api.bigoven.com/recipe/:id',{api_key:'r02x0R09O76JMCMc4nuM0PJXawUHpBUL'}); 
 
 
 

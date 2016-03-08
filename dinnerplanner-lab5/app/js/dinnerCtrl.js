@@ -30,11 +30,17 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
   }
 
   $scope.getDishPrice = function(obj){
-  	if(obj == null) {
+  	if(obj == null){
   		return 0;
   	}
   	return Dinner.getDishPrice(obj);
   }
+
+  $scope.getSpecificDishPrice = function(){
+  	return $scope.getDishPrice($scope.specificDish);
+  }
+
+
 
   // TODO in Lab 5: Implement the methods to get the dinner menu
   // add dish to menu and get total menu price
