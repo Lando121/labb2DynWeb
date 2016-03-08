@@ -13,6 +13,9 @@
           </div>
           <div class="row"><!-- update maträtt totalcost --> 
             <div class="col-xs-12" id="view2after">
+              <div ng-repeat="dish in menu">
+                  hej
+              </div>
             
     <!--p class="col-xs-6 left_align_par orange_paragraph_view2" id="view2after_name"></p>
     <p class="col-xs-6 right_align_par orange_paragraph_view2" id="view2after_pending_cost"></p-->
@@ -21,7 +24,7 @@
 
           <div class="row"> 
             <p class="col-xs-6 left_align_par orange_paragraph_view2" >Pending</p>
-            <p id="view2_specific_dish" class="col-xs-6 right_align_par orange_paragraph_view2"> 0.00</p>
+            <p id="view2_specific_dish" class="col-xs-6 right_align_par orange_paragraph_view2"> {{getSpecificDishPrice()}}</p>
           </div>
           <div id="view2_border_element"class="row">
           </div>

@@ -4,7 +4,6 @@ dinnerPlannerApp.controller('DishCtrl', function ($scope,$routeParams,Dinner) {
 
 
 	$scope.dish = Dinner.Dish.get({id:$routeParams.dishId});
-	console.log($scope.dish);
 
 
 	Dinner.setSpecificDish($scope.dish);
@@ -14,14 +13,16 @@ dinnerPlannerApp.controller('DishCtrl', function ($scope,$routeParams,Dinner) {
   }
   
   	$scope.getDishPrice = function() {
+ 
   		return Dinner.getDishPrice($scope.dish);
   	}
 
 
   	$scope.getTotalPrice =function (){
-  		console.log($scope.getNumberOfGuests());
-  		console.log($scope.getDishPrice());
-  		return $scope.getNumberOfGuests() * $scope.getDishPrice(); 
+  		if($scope.dish != null){
+  			return $scope.getNumberOfGuests() * $scope.getDishPrice(); 
+  		}
+  		return 0;
   	}
 
   	$scope.addDishToMenu = function(){
