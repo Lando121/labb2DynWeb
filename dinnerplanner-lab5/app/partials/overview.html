@@ -1,24 +1,27 @@
 <!-- vi måste fixa detta själva-->
 <ng-include ng-controller="DinnerCtrl"></ng-include>
-<div class="row">
-            <div class="col-xs-12" id="view56_subHeading">
-              <h2 class="col-xs-12 col-sm-6"> My Dinner: <b id="view5_amount_people"> {{getNumberOfGuests()}} </b> people </h2>
-              <a href="#/search" class="col-xs-12 col-sm-6 btn btn-default" id="goBack">Go back and edit dinner</a>
+  <div id="View5">
+    <div class="row">
+      <div class="col-xs-12" id="view56_subHeading">
+        <h2 class="col-xs-12 col-sm-6"> My Dinner: <b id="view5_amount_people"> {{getNumberOfGuests()}} </b> people </h2>
+        <a href="#/search" class="col-xs-12 col-sm-6 btn btn-default" id="goBack">Go back and edit dinner</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6" id="view5_centerPics">
+        <div ng-repeat="dish in menu">
+      
+          <div class="col-xs-12 col-sm-4 _dish_col">
+            <div class="row view3_dish_obj">
+              <img class="view3_dish_img" ng-src="{{dish.ImageURL}}"/>
             </div>
+            <div class="row view3_dish_obj view3_dish_name" id="view5_dish">
+              {{dish.Title}} 
+            </div>
+
           </div>
-            <div class="row">
-              <div ng-repeat="dish in dishes">
-                <div class="col-xs-6" id="view5_centerPics">
-                  <div class="col-xs-12 col-sm-4 _dish_col">
-                    <div class="row view3_dish_obj">
-                      <img class="view3_dish_img" ng-src="{{dish.ImageURL}}"/>
-                    </div>
-                    <div class="row view3_dish_obj view3_dish_name" id="view5_dish">
-                      {{dish.Title}} 
-                    </div>
-                  </div>
-                </div>
-              </div>
+        </div>
+      </div>
 
 
 
