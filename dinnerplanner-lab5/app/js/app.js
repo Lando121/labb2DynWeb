@@ -54,7 +54,8 @@ dinnerPlannerApp.config(['$routeProvider',
         controller: 'DinnerCtrl'
       }).
       when('/preparation',{
-        templateUrl: 'partials/preparation.html'
+        templateUrl: 'partials/preparation.html',
+        controller: 'DinnerCtrl'
       }).
       otherwise({
         redirectTo: '/home'

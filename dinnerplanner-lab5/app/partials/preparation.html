@@ -1,11 +1,30 @@
 <!-- vi måste fixa detta själva-->
-  <div class="row">
+<ng-include ng-controller="DinnerCtrl"></ng-include>
+	<div id="View6">
+  		<div class="row">
             <div class="col-xs-12" id="view56_subHeading">
-              <h2 class="col-xs-12 col-sm-6"> My Dinner: <b id="view6_amount_people"></b> people </h2>
+              <h2 class="col-xs-12 col-sm-6"> My Dinner: <b id="view6_amount_people"> {{getNumberOfGuests()}} </b> people </h2>
               <a href="#/search" class="col-xs-12 col-sm-6 btn btn-default" id="goBack">Go back and edit dinner</a>
             </div>
-          </div>
+        </div>
           <div id="view6_dynamic">
-          Här ska allt bajs komma in
-          <!--alla rätter i menyn skrivs här!-->
- </div>
+          	<div class="row view6_dishrow">
+          		<div ng-repeat="dish in menu">
+          		<div class="row" id="view6_spacing">
+
+          			<div class="col-xs-6 col-sm-2">
+          				<img class="view3_dish_img" ng-src="{{dish.ImageURL}}"/>
+          			</div>
+          			<div class="col-xs-6 col-sm-4">
+          				<h1 class="view6_dishname" id="view6_dish0">{{dish.Title}} </h1>
+          				<p id="dish0_description">{{dish.Description}}</p>
+          			</div>
+          			<div class="col-xs-12 col-sm-6">
+          				<h1 id="view6_dishpreparation">Preparation</h1>
+          				<p>{{dish.Instructions}}</p>	
+          			</div>
+          			          			</div>
+          		</div>
+ 			</div>
+ 		</div>
+ 	</div>
