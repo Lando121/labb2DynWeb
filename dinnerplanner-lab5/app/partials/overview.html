@@ -7,14 +7,24 @@
             </div>
           </div>
             <div class="row">
-            <div class="col-xs-6" id="view5_centerPics">
-            
-            </div>
+              <div ng-repeat="dish in dishes">
+                <div class="col-xs-6" id="view5_centerPics">
+                  <div class="col-xs-12 col-sm-4 _dish_col">
+                    <div class="row view3_dish_obj">
+                      <img class="view3_dish_img" ng-src="{{dish.ImageURL}}"/>
+                    </div>
+                    <div class="row view3_dish_obj view3_dish_name" id="view5_dish">
+                      {{dish.Title}} 
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
             <div class="col-xs-1" id="test2">
               <p> Total:</p>
               <p id="total_price"> {{getTotalMenuPrice()}}  </p>
-           
-
             </div>
           </div>
           <div class="row">
