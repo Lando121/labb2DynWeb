@@ -13,10 +13,11 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
   }
 
   $scope.getDinnerMenu = function() {
-
+  	return Dinner.getFullMenu();
   }
 
-  $scope.addDishToMenu = function() {
+  $scope.addDishToMenu = function(obj) {
+  	Dinner.addDishToMenu(obj);
 
   }
 
