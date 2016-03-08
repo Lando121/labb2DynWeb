@@ -17,6 +17,10 @@ dinnerPlannerApp.controller('DishCtrl', function ($scope,$routeParams,Dinner) {
   		return Dinner.getDishPrice($scope.dish);
   	}
 
+  	$scope.getTotalPrice =function (){
+  		return $scope.getNumberOfGuests() * $scope.getDishPrice(); 
+  	}
+
 
   // TODO in Lab 5: you need to get the dish according to the routing parameter
   // $routingParams.paramName
