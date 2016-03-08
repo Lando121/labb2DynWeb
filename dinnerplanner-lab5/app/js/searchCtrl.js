@@ -17,13 +17,4 @@ dinnerPlannerApp.controller('SearchCtrl', function ($scope,Dinner) {
  }
 
 
-
-
-
-
-  //search for dishes
-   Dinner.DishSearch.get({title_kw:''})
-  //search for a specific dish 
-   Dinner.Dish.get({id:12345})
-
 });

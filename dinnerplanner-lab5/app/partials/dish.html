@@ -4,13 +4,13 @@
 <div id="View4" class="col-xs-12 col-sm-10">
           <div id="view4_description_column"class="col-xs-12 col-sm-6">
             <div class="row">
-              <h1 id="view4_dish_name"> {{getDish().Title}}</h1>
+              <h1 id="view4_dish_name"> {{dish.Title}}</h1>
             </div>
             <div class="row">
-                <img id="view4_dish_img" alt="Smiley face" id="view4_dish_img">
+                <img ng-src="{{dish.ImageURL}}" id="view4_dish_img" alt="Smiley face" id="view4_dish_img">
             </div>
             <div class="row">
-              <p id="view4_description_paragraph">{{getDish().Description}}</p>
+              <p id="view4_description_paragraph">{{dish.Description}}</p>
             </div>
             <div class="row" id="view4_back_to_dish_button_row">
               <button id="back_to_select_dish_button" type="button" class="col-xs-12 btn btn-default">back to Select Dish</button>
@@ -19,7 +19,7 @@
               <h1>PREPARATION</h1>
             </div>
             <div class="row" id="view4_preparation_row">
-              <p id="view4_preparation_paragraph">{{getDish().Instructions}}</p>
+              <p id="view4_preparation_paragraph">{{dish.Instructions}}</p>
             </div>
           </div>
           <div id="view4_recipe_column"class="col-xs-12 col-sm-6">

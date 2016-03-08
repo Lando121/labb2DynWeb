@@ -9,20 +9,12 @@
               <div id="view3_search_row" class="row bottom_row">
                   <div class="col-sm-4 col-sm-12">
                     <div class="input-group">
-                        <input id ="view3_search_text_field" type="text" class="form-control" placeholder="Enter key words">
                           <span class="input-group-btn">
-                            <input ng-model="query"/>
-                            <button ng-click="search(query)">Find</button>
-                            {{status}}
-                            <ul>
-                            <li ng-repeat="dish in dishes">
-                            <img ng-src="{{dish.ImageURL}}"/>
-                            {{dish.Title}}
-                            <a ng-href="#/dish/{{dish.RecipeID}}">View more</a>
-                            {{dish.Category}} {{dish.Subcategory}}
-                            </li>
-                            </ul>
-                          </span>
+                            <input id ="view3_search_text_field" class="form-control" placeholder="Enter key words"ng-model="query"/>
+                              <button ng-click="search(query)">Search</button>
+                              {{status}}
+                              
+                            </span>
                            <div id="spinnerContainer" ></div>
 
                     </div><!-- /input-group -->
@@ -31,6 +23,14 @@
           </div>
         </div>  
           <div id="view3_dish_row"class="row">
+            <ul>
+              <li ng-repeat="dish in dishes">
+                <img ng-src="{{dish.ImageURL}}"/>
+                  {{dish.Title}}
+                  <a ng-href="#/dish/{{dish.RecipeID}}">View more</a>
+                    {{dish.Category}} {{dish.Subcategory}}
+              </li>
+            </ul>          
           </div>  
 
 
