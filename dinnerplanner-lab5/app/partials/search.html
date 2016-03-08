@@ -23,14 +23,22 @@
           </div>
         </div>  
           <div id="view3_dish_row"class="row">
-            <ul>
-              <li ng-repeat="dish in dishes">
-                <img ng-src="{{dish.ImageURL}}"/>
-                  {{dish.Title}}
-                  <a ng-href="#/dish/{{dish.RecipeID}}">View more</a>
-                    {{dish.Category}} {{dish.Subcategory}}
-              </li>
-            </ul>          
+        
+              <div ng-repeat="dish in dishes">
+                <div class="col-xs-12 col-sm-3 view3_dish_col">
+                  <div class="row view3_dish_obj">
+                    <img class="view3_dish_img" ng-src="{{dish.ImageURL}}"/>
+                  </div>
+                  <div class="row view3_dish_obj view3_dish_name">
+                  {{dish.Title}} <br>
+                  <a ng-href="#/dish/{{dish.RecipeID}}">View more</a> <br>
+                    {{dish.Category}}, {{dish.Subcategory}}
+                </div>
+              </div>
+                <div ng-if="$index % 4 == 3" class="row">
+                </div>
+              </div>
+                    
           </div>  
 
 
