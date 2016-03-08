@@ -161,47 +161,11 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
   
 
   //function that returns a dish of specific ID
-  this.getDish = function (callback, id, view) {
+this.DishSearch = $resource('http://api.bigoven.com/recipes',{pg:1,rpp:25,api_key:'YOUR_API_KEY'});
+
+this.Dish = $resource('http://api.bigoven.com/recipe/:id',{api_key:'YOUR_API_KEY'}); 
 
 
-     var apiKey = "H9n1zb6es492fj87OxDtZM9s5sb29rW3";
-        var url = "http://api.bigoven.com/recipe/"  + id + "?api_key=" + apiKey;
-        $.ajax({
-            type: "GET",
-            dataType: 'json',
-            cache: false,
-            url: url,
-            success:callback,
-            error: function(data, exception){
-                  
-                      self.notifyObservers(data, view, exception);
-                    }
-                         
-           
-        });
-  }
-
-  var self = this;
-  
-  this.getAllDishes = function (callback, type, filter, view) {
-
-            var apiKey = "H9n1zb6es492fj87OxDtZM9s5sb29rW3";
-
-            var url = "http://api.bigoven.com/recipes?pg=1&rpp=100&any_kw="
-                  + type 
-                  + "&api_key="+apiKey;
-            $.ajax({
-                    type: "GET",
-                    dataType: 'json',
-                    cache: false,
-                    url: url,
-                    success: callback,
-                    error: function(data, exception){
-                      self.notifyObservers(data, view, exception);
-                    }
-                });
-        
-  }
 
 
   
