@@ -334,12 +334,10 @@ hr {
   }
 }
 #confirmButtonFix{
-	margin-top:0;
-	margin-bottom:0;
+
+
 	background-color:#EB963B;
 	border: solid 2px black;
-	float:right;
-	width:15%;
 	
 
 }

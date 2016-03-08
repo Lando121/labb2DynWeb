@@ -20,16 +20,20 @@
           </div>
 
           <div class="row"> 
-            <p class="col-xs-6 left_align_par orange_paragraph_view2" >Pending</p>
-            <p id="view2_specific_dish" class="col-xs-6 right_align_par orange_paragraph_view2"> 0.00</p>
+            <div class="col-xs-6"><span class="left_align_par orange_paragraph_view2" >Pending</span></div>
+            <div class="col-xs-6"><span id="view2_specific_dish" class="right_align_par orange_paragraph_view2"> 0.00</span></div>
           </div>
-          <div id="view2_border_element"class="row">
+          <div id="view2_border_element" class="row">
           </div>
           <div class="row">
-            <p id="view2after_sek_paragraph"class="col-xs-12 right_align_par orange_paragraph_view2">SEK 0.00</p>
+          	<div class="col-xs-12">
+           		<p id="view2after_sek_paragraph" class="right_align_par orange_paragraph_view2">SEK 0.00</p>
+            </div>
           </div>
            <div class="row">
-            <a href="#/overview" class="btn col-xs-12 btn btn-default" id="confirmButtonFix">Confirm Dinner</a>
+           	<div class="col-xs-12">
+            	<a href="#/overview" class="btn btn btn-default" id="confirmButtonFix"> Confirm Dinner</a>
+          	</div>
           </div>
         </div>
           Total number of guest: {{getNumberOfGuests()}}
