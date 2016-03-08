@@ -3,7 +3,7 @@
 // dependency on any service you need. Angular will insure that the
 // service is created first time it is needed and then just reuse it
 // the next time.
-dinnerPlannerApp.factory('Dinner',function ($resource) {
+dinnerPlannerApp.factory('Dinner',function ($resource,$cookieStore) {
 
 
   // TODO in Lab 5: Add your model code from previous labs
@@ -17,7 +17,9 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
  
   //TODO Lab 2 implement the data structure that will hold number of guest
   // and selected dinner options for dinner menu
-  var numGuests = 1;
+  var numGuests = $cookieStore.get("guests");
+  
+  var selectedDishesIDs = $cookieStore.get("dishIDs");
   var selectedDishes = [];
   var obsArray = new Array();
   var specificDish;
@@ -26,6 +28,7 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
   this.setNumberOfGuests = function(num) {
     //TODO Lab 2
     numGuests = num;
+    $cookieStore.put("guests", numGuests);
     
   }
 
@@ -46,6 +49,9 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
 
   // should return 
   this.getNumberOfGuests = function() {
+    if(numGuests == null){
+      return 0;
+    }
     //TODO Lab 2'
     return numGuests;
   }
@@ -91,6 +97,9 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
   }**/
   //Returns all the dishes on the menu.
   this.getFullMenu = function() {
+    if(selectedDishes.length == 0){
+      this.fillMenu();
+    }
     //TODO Lab 2
     return selectedDishes;
   }
@@ -106,6 +115,9 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
   }
 
   this.getDishPrice = function(obj){
+    if(obj.Ingredients == null){
+      return;
+    }
     var cost = 0;
     for(i=0; i<obj.Ingredients.length;i++){
       cost = cost+obj.Ingredients[i].Quantity;
@@ -131,19 +143,34 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
   //Adds the passed dish to the menu. If the dish of that type already exists on the menu
   //it is removed from the menu and the new one added.
   this.addDishToMenu = function(obj) {
+    if(selectedDishesIDs == null){
+      selectedDishesIDs = [];
+    }
 
     //TODO Lab 2 
   //var dish = this.getDishById(id);
     for( j= 0; j < selectedDishes.length; j++){
       if(obj.Category==selectedDishes[j].Category){
         delete selectedDishes[j];
-        selectedDishes[j] = obj;
-       
-        return;
+        selectedDishes.splice(j,1);
+        selectedDishesIDs.splice(j,1);
+        break;
       }
     }
     selectedDishes.push(obj);
+    selectedDishesIDs.push(obj.RecipeID);
+    console.log(selectedDishesIDs);
+    $cookieStore.put("dishIDs", selectedDishesIDs);
+  }
 
+  this.fillMenu = function(){
+     if(selectedDishesIDs == null){
+      selectedDishesIDs = [];
+    }
+    for(i = 0; i < selectedDishesIDs.length; i++){
+      selectedDishes[i] = this.Dish.get({id:selectedDishesIDs[i]});
+    }
+    return selectedDishes;
   }
 
   //Removes dish from menu
@@ -164,9 +191,9 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
   
 
   //function that returns a dish of specific ID
-this.DishSearch = $resource('http://api.bigoven.com/recipes',{pg:1,rpp:25,api_key:'r02x0R09O76JMCMc4nuM0PJXawUHpBUL'});
+this.DishSearch = $resource('http://api.bigoven.com/recipes',{pg:1,rpp:25,api_key:'1hg3g4Dkwr6pSt22n00EfS01rz568IR6'});
 
-this.Dish = $resource('http://api.bigoven.com/recipe/:id',{api_key:'r02x0R09O76JMCMc4nuM0PJXawUHpBUL'}); 
+this.Dish = $resource('http://api.bigoven.com/recipe/:id',{api_key:'1hg3g4Dkwr6pSt22n00EfS01rz568IR6'}); 
 
 
 
