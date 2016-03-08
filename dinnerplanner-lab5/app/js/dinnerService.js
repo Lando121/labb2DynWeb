@@ -117,8 +117,12 @@ dinnerPlannerApp.factory('Dinner',function ($resource) {
   this.getTotalMenuPrice = function() {
     //TODO Lab 2
     var totalCost = 0;
-    for(i = 0; i < selectedDishes.length; i++){
-      totalCost = totalCost + (this.getNumberOfGuests() * this.getDishPrice(selectedDishes[i]));
+
+    for(k = 0; k < selectedDishes.length; k++){
+      console.log(k);
+      console.log(selectedDishes[k]);
+
+      totalCost = totalCost + (this.getNumberOfGuests() * this.getDishPrice(selectedDishes[k]));
       
     }
     return totalCost;

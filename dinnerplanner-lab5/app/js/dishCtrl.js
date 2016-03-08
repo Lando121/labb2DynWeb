@@ -12,7 +12,7 @@ dinnerPlannerApp.controller('DishCtrl', function ($scope,$routeParams,Dinner) {
     return Dinner.getNumberOfGuests();
   }
   
-  	$scope.getDishPrice = function() {
+  	$scope.getSpecificPrice = function() {
  
   		return Dinner.getDishPrice($scope.dish);
   	}
@@ -20,7 +20,7 @@ dinnerPlannerApp.controller('DishCtrl', function ($scope,$routeParams,Dinner) {
 
   	$scope.getTotalPrice =function (){
   		if($scope.dish != null){
-  			return $scope.getNumberOfGuests() * $scope.getDishPrice(); 
+  			return $scope.getNumberOfGuests() * $scope.getSpecificPrice(); 
   		}
   		return 0;
   	}
