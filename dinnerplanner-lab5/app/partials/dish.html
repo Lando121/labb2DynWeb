@@ -1,5 +1,46 @@
 <!-- We include the sidebar as it is shared across two screens. -->
 <ng-include src="'partials/dinner-sidebar.html'" ng-controller="DinnerCtrl"></ng-include>
 
+<div id="View4" class="col-xs-12 col-sm-10">
+          <div id="view4_description_column"class="col-xs-12 col-sm-6">
+            <div class="row">
+              <h1 id="view4_dish_name"> {{getDish().Title}}</h1>
+            </div>
+            <div class="row">
+                <img id="view4_dish_img" alt="Smiley face" id="view4_dish_img">
+            </div>
+            <div class="row">
+              <p id="view4_description_paragraph">{{getDish().Description}}</p>
+            </div>
+            <div class="row" id="view4_back_to_dish_button_row">
+              <button id="back_to_select_dish_button" type="button" class="col-xs-12 btn btn-default">back to Select Dish</button>
+            </div>
+            <div class="row" id="view4_preparation_title_row">
+              <h1>PREPARATION</h1>
+            </div>
+            <div class="row" id="view4_preparation_row">
+              <p id="view4_preparation_paragraph">{{getDish().Instructions}}</p>
+            </div>
+          </div>
+          <div id="view4_recipe_column"class="col-xs-12 col-sm-6">
+            <div class="row">
+              <div class="col-xs-12">
+                <h2>INGREDIENTS FOR <b id="view4_amount_of_people"> {{getNumberOfGuests()}}</b> **fix**PEOPLE</h2>
+              </div>
+            </div>
+            <div id="view4_recipe_middle_box">
+            </div>
+          
+          <div class="row" id="view4_confirm_dish_row">
+            <div class="col-xs-12 col-sm-6">
+              <button id="view4_confirm_dish_button" type="button" class=" btn btn-default">Confirm Dish</button>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <p class="right_align_par">SEK <b id="view4_total_cost"> {{getDishPrice()}}</b></p>
+            </div>
+          </div>
+        </div>
+    </div>
+
 <!-- TODO in Lab 5: Display the dish information including image, Description, 
 Instructions, Ingredients and total cost. -->
